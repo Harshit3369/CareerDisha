@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: var(--theme-primary);
+  --color-accent: var(--theme-accent);
+  --color-dark: var(--theme-dark);
+  --color-light: var(--theme-light);
+  --color-lavender: var(--theme-lavender);
+  --color-bg: var(--theme-bg);
+}
+
+@layer base {
+  :root {
+    --theme-primary: #7C6FF7;
+    --theme-accent: #F5A623;
+    --theme-dark: #1A1A2E;
+    --theme-light: #FFFFFF;
+    --theme-lavender: #EAE8FD;
+    --theme-bg: #F5E6D3;
+  }
+
+  html.dark {
+    --theme-primary: #9C94F9;
+    --theme-accent: #F7B74A;
+    --theme-dark: #FFFFFF;
+    --theme-light: #1A1A2E;
+    --theme-lavender: #2A2A4E;
+    --theme-bg: #12121A;
+  }
+
+  body {
+    @apply font-sans bg-black;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .app-container {
+    @apply w-full max-w-[390px] mx-auto min-h-screen bg-[var(--color-bg)] relative overflow-x-hidden shadow-2xl shadow-black/50 transition-colors duration-300;
+  }
+}

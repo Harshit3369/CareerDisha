@@ -1,0 +1,87 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User profile data and settings",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "onboardingCompleted": { "type": "boolean" },
+        "interests": { "type": "array", "items": { "type": "string" } },
+        "careerFocus": { "type": "string" },
+        "points": { "type": "number", "description": "Engagement points/coins" },
+        "streak": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "onboardingCompleted"]
+    },
+    "ChatSession": {
+      "title": "Chat Session",
+      "description": "A conversation between the user and Disha AI",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "lastMessage": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "createdAt"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "An individual message in a chat",
+      "type": "object",
+      "properties": {
+        "chatId": { "type": "string" },
+        "sender": { "type": "string", "enum": ["user", "ai"] },
+        "text": { "type": "string" },
+        "followUps": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["sender", "text", "createdAt"]
+    },
+    "CareerRoadmap": {
+      "title": "Career Roadmap",
+      "description": "A saved career roadmap for a user",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "career": { "type": "string" },
+        "steps": { "type": "array", "items": { "$ref": "#/entities/RoadmapStep" } },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "career"]
+    },
+    "RoadmapStep": {
+      "title": "Roadmap Step",
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "status": { "type": "string", "enum": ["locked", "active", "completed"] },
+        "icon": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Individual user profiles"
+    },
+    "/chatSessions/{chatId}": {
+      "schema": "ChatSession",
+      "description": "Top-level chat sessions"
+    },
+    "/chatSessions/{chatId}/messages/{messageId}": {
+      "schema": "Message",
+      "description": "Messages within a chat session"
+    },
+    "/roadmaps/{roadmapId}": {
+      "schema": "CareerRoadmap",
+      "description": "Saved roadmaps for users"
+    }
+  }
+}
