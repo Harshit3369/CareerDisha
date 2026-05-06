@@ -1,6 +1,6 @@
-const express = require("express");
-const cors = require("cors");
-const { GoogleGenAI, Type } = require("@google/genai");
+import express from "express";
+import cors from "cors";
+import { GoogleGenAI, Type } from "@google/genai";
 
 // Setup Express app
 const app = express();
@@ -866,4 +866,4 @@ Surprise opportunity you might not know about: [Cross-stream exam]
 });
 
 // Export App as standard Express module for Vercel Serverless
-module.exports = app;
+export default app;
