@@ -20,12 +20,12 @@ app.post("/api/generate-content", async (req, res) => {
     }
 
     const ai = new GoogleGenAI({ apiKey });
-    
+
     const config = {
       model: "gemini-3-flash-preview",
       contents: prompt
     };
-    
+
     if (schema) {
       config.config = {
         responseMimeType: "application/json",
@@ -36,9 +36,9 @@ app.post("/api/generate-content", async (req, res) => {
       config.config = config.config || {};
       config.config.systemInstruction = systemInstruction;
     }
-    
+
     const response = await ai.models.generateContent(config);
-    
+
     if (schema) {
       res.json(JSON.parse(response.text || "{}"));
     } else {
@@ -67,7 +67,7 @@ app.post("/api/recommend-colleges", async (req, res) => {
     if (!courseChosen) {
       return res.status(400).json({ error: "courseChosen is required" });
     }
-    
+
     let apiKey = process.env.GEMINI_API_KEY || process.env.REACT_APP_GEMINI_API_KEY;
 
     if (!apiKey) {
@@ -853,7 +853,7 @@ Surprise opportunity you might not know about: [Cross-stream exam]
     let parsed;
     try {
       parsed = JSON.parse(text);
-    } catch(e) {
+    } catch (e) {
       const match = text.match(/\{[\s\S]*\}/);
       parsed = match ? JSON.parse(match[0]) : {};
     }
