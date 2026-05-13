@@ -5,8 +5,20 @@ import { GoogleGenAI, Type } from "@google/genai";
 // Setup Express app
 const app = express();
 
-// Automatically handle CORS and JSON parsing
-app.use(cors({ origin: true }));
+// Explicit CORS headers for cross-origin requests (Firebase Hosting → Vercel API)
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  
+  // Handle preflight OPTIONS requests immediately
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  next();
+});
+
 app.use(express.json());
 
 // Route 1: Generic content generation for the frontend
@@ -20,12 +32,12 @@ app.post("/api/generate-content", async (req, res) => {
     }
 
     const ai = new GoogleGenAI({ apiKey });
-
+    
     const config = {
-      model: "gemini-3-flash-preview",
+      model: "gemini-2.0-flash",
       contents: prompt
     };
-
+    
     if (schema) {
       config.config = {
         responseMimeType: "application/json",
@@ -36,9 +48,9 @@ app.post("/api/generate-content", async (req, res) => {
       config.config = config.config || {};
       config.config.systemInstruction = systemInstruction;
     }
-
+    
     const response = await ai.models.generateContent(config);
-
+    
     if (schema) {
       res.json(JSON.parse(response.text || "{}"));
     } else {
@@ -46,7 +58,11 @@ app.post("/api/generate-content", async (req, res) => {
     }
   } catch (error) {
     console.error("Error in /api/generate-content:", error);
-    res.status(500).json({ error: error?.message || "Failed to generate content." });
+    let errMsg = error?.message || "Failed to generate content.";
+    if (errMsg.includes('leaked') || errMsg.includes('API_KEY_INVALID')) {
+      errMsg = "Your Gemini API key is missing, invalid, or leaked. Please configure a valid API key in your environment variables.";
+    }
+    res.status(500).json({ error: errMsg });
   }
 });
 
@@ -67,7 +83,7 @@ app.post("/api/recommend-colleges", async (req, res) => {
     if (!courseChosen) {
       return res.status(400).json({ error: "courseChosen is required" });
     }
-
+    
     let apiKey = process.env.GEMINI_API_KEY || process.env.REACT_APP_GEMINI_API_KEY;
 
     if (!apiKey) {
@@ -108,7 +124,7 @@ IMPORTANT CONSTRAINTS:
 `;
 
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-2.0-flash",
       contents: prompt,
       config: {
         responseMimeType: "application/json",
@@ -169,7 +185,11 @@ IMPORTANT CONSTRAINTS:
 
   } catch (error) {
     console.error("Error generating recommendations:", error);
-    res.status(500).json({ error: error?.message || "Failed to generate college recommendations." });
+    let errMsg = error?.message || "Failed to generate college recommendations.";
+    if (errMsg.includes('leaked') || errMsg.includes('API_KEY_INVALID')) {
+      errMsg = "Your Gemini API key is missing, invalid, or leaked. Please configure a valid API key in your environment variables.";
+    }
+    res.status(500).json({ error: errMsg });
   }
 });
 
@@ -603,7 +623,7 @@ Surprise opportunity you might not know about: [Cross-stream exam]
 - NEVER return the same exam list regardless of who is asking`;
 
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-2.0-flash",
       contents: prompt,
       config: {
         responseMimeType: "application/json",
@@ -853,7 +873,7 @@ Surprise opportunity you might not know about: [Cross-stream exam]
     let parsed;
     try {
       parsed = JSON.parse(text);
-    } catch (e) {
+    } catch(e) {
       const match = text.match(/\{[\s\S]*\}/);
       parsed = match ? JSON.parse(match[0]) : {};
     }
@@ -861,7 +881,11 @@ Surprise opportunity you might not know about: [Cross-stream exam]
 
   } catch (error) {
     console.error("Error generating exam tracker data:", error);
-    res.status(500).json({ error: error?.message || "Failed to generate exam tracker data." });
+    let errMsg = error?.message || "Failed to generate exam tracker data.";
+    if (errMsg.includes('leaked') || errMsg.includes('API_KEY_INVALID')) {
+      errMsg = "Your Gemini API key is missing, invalid, or leaked. Please configure a valid API key in your environment variables.";
+    }
+    res.status(500).json({ error: errMsg });
   }
 });
 
