@@ -58,19 +58,26 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       // Prompt says users/{uid}/profile
       const docRef = doc(db, 'users', currentUser.uid, 'settings', 'profile');
       const docSnap = await getDoc(docRef);
+      let fetchedProfile: UserProfile | null = null;
       if (docSnap.exists()) {
-        setUserProfile(docSnap.data() as UserProfile);
+        fetchedProfile = docSnap.data() as UserProfile;
       } else {
         // Compatibility check: check if it's in the old location
         const oldDocRef = doc(db, 'users', currentUser.uid);
         const oldDocSnap = await getDoc(oldDocRef);
         if (oldDocSnap.exists()) {
-          const oldData = oldDocSnap.data();
-          setUserProfile(oldData as UserProfile);
-          // Migrate? For now just use it
-        } else {
-          setUserProfile(null); // Return null to indicate onboarding needed
+          fetchedProfile = oldDocSnap.data() as UserProfile;
         }
+      }
+
+      if (fetchedProfile) {
+        // Admin Override
+        if (currentUser.email === 'harshitmishra3369@gmail.com') {
+          fetchedProfile = { ...fetchedProfile, isPremium: true };
+        }
+        setUserProfile(fetchedProfile);
+      } else {
+        setUserProfile(null);
       }
     } catch (error: any) {
       if (error.code === 'permission-denied') {
@@ -117,7 +124,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       await signInWithPopup(auth, provider);
     } catch (error: any) {
       console.error('Error signing in', error);
-      if (error.code !== 'auth/popup-closed-by-user' && error.code !== 'auth/cancelled-by-user') {
+      if (error.code === 'auth/popup-blocked') {
+        await import('firebase/auth').then(({ signInWithRedirect }) => signInWithRedirect(auth, provider));
+      } else if (error.code !== 'auth/popup-closed-by-user' && error.code !== 'auth/cancelled-by-user') {
         alert(`Failed to sign in: ${error.message}`);
       }
     } finally {

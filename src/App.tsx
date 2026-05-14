@@ -20,6 +20,11 @@ import ExploreScreen from './screens/ExploreScreen';
 import ExamTrackerScreen from './screens/ExamTrackerScreen';
 import CareerRoadmapScreen from './screens/CareerRoadmapScreen';
 import CareerDetailsScreen from './screens/CareerDetailsScreen';
+import PathCommitmentScreen from './screens/PathCommitmentScreen';
+import StoryInputScreen from './screens/StoryInputScreen';
+import StoryMapScreen from './screens/StoryMapScreen';
+import StoryTrackerScreen from './screens/StoryTrackerScreen';
+import DreamCostScreen from './screens/DreamCostScreen';
 import { useAuth } from './contexts/AuthContext';
 
 function AuthenticatedApp() {
@@ -60,6 +65,11 @@ function AuthenticatedApp() {
           <Route path="/advisor" element={<AdvisorScreen />} />
           <Route path="/pivot" element={<PivotScreen />} />
           <Route path="/exam-tracker" element={<ExamTrackerScreen />} />
+          <Route path="/path-commitment" element={<PathCommitmentScreen />} />
+          <Route path="/my-story" element={<StoryInputScreen />} />
+          <Route path="/story-map" element={<StoryMapScreen />} />
+          <Route path="/story-tracker" element={<StoryTrackerScreen />} />
+          <Route path="/dream-cost" element={<DreamCostScreen />} />
           <Route path="/compare" element={<CompareScreen />} />
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="*" element={<Navigate to="/" replace />} />

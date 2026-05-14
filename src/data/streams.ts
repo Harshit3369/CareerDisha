@@ -1934,6 +1934,1170 @@ export const STREAMS = {
           ],
           "notes": "Needs: Any graduation"
         }
+      },
+      {
+        "id": "venture-capitalist",
+        "name": "Venture Capitalist (VC/PE)",
+        "icon": "🚀",
+        "color": "#ff6b6b",
+        "route": "BCom/MBA → IB/PE Experience → VC Fund",
+        "timeline": "6-8 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Matters",
+          "twelfth": "Matters",
+          "description": "Need top college credentials to enter IB/PE first. Then VC firms hire from proven performers."
+        },
+        "steps": [
+          {
+            "year": "1-3",
+            "title": "Elite Education",
+            "desc": "SRCC/Stephens (BCom) or IIM MBA."
+          },
+          {
+            "year": "3-6",
+            "title": "IB/PE/Consulting",
+            "desc": "Minimum 3 years at Goldman Sachs, Sequoia India, Accel Partners."
+          },
+          {
+            "year": "6+",
+            "title": "VC Associate",
+            "desc": "Analyze startups, lead investments, board positions."
+          }
+        ],
+        "colleges": [
+          "Top IB firms: Goldman, JP Morgan, Kotak",
+          "Tier 1 PE: Blackstone, KKR, Apollo",
+          "Top VC: Sequoia, Accel, Founders Factory"
+        ],
+        "cost": "₹26-47 Lakh (MBA path)",
+        "salary": {
+          "entry": "₹15-25 LPA",
+          "mid": "₹35-75 LPA",
+          "senior": "₹1-3 Cr",
+          "top": "₹5-20 Cr",
+          "source": "PitchBook India VC salary data"
+        },
+        "exams": [
+          "CAT/GMAT (MBA)",
+          "CFA L1 helpful"
+        ],
+        "pros": [
+          "Massive upside through fund returns",
+          "Work on world-changing startups",
+          "Build legendary networks"
+        ],
+        "cons": [
+          "Extremely competitive",
+          "90% of startups fail",
+          "Years before significant compensation"
+        ],
+        "abroad": {
+          "level": "Very High",
+          "desc": "Sequoia/Accel have global operations. Transfer to Silicon Valley possible."
+        },
+        "familyAngle": "When you tell family you work at Sequoia Capital making ₹1 Cr+ in carry, conversations end.",
+        "eligibility": "IB/PE background essential. Top educational pedigree.",
+        "educationLevels": [
+          "afterGraduation"
+        ],
+        "prerequisites": {
+          "minEducation": "bachelor",
+          "streams": [
+            "Commerce",
+            "Science"
+          ],
+          "notes": "Needs: MBA + IB/PE experience"
+        }
+      },
+      {
+        "id": "management-consultant",
+        "name": "Management Consultant (MBB)",
+        "icon": "📈",
+        "color": "#4c63ff",
+        "route": "BCom/Engineering → IIM MBA → McKinsey/BCG/Bain",
+        "timeline": "5-6 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Matters",
+          "twelfth": "Matters",
+          "description": "Top tier consulting firms filter on academics. Need 85%+ throughout."
+        },
+        "steps": [
+          {
+            "year": "1-4",
+            "title": "Strong UG + Work Experience",
+            "desc": "Any top college. 1-2 years work exp. Prepare for CAT."
+          },
+          {
+            "year": "4-6",
+            "title": "IIM MBA (Top 5)",
+            "desc": "CAT 99.5%ile+. Focus on consulting specialization."
+          },
+          {
+            "year": "6+",
+            "title": "Consultant → Manager → Partner",
+            "desc": "Client projects, team leadership, practice building."
+          }
+        ],
+        "colleges": [
+          "McKinsey: Typically IIM A/B/C only",
+          "BCG: IIM A/B/C + XLRI/ISB",
+          "Bain: IIM Bangalore, IIM Calcutta"
+        ],
+        "cost": "₹20-30 Lakh (MBA)",
+        "salary": {
+          "entry": "₹18-28 LPA",
+          "mid": "₹45-90 LPA",
+          "senior": "₹1-2 Cr",
+          "top": "₹3-10 Cr",
+          "source": "Management consulting exit salary data 2024"
+        },
+        "exams": [
+          "CAT 99.5%ile"
+        ],
+        "pros": [
+          "Prestige unmatched in India",
+          "Work on ₹100+ Cr transformation projects",
+          "Exit opportunities: PE, CEO roles, startups"
+        ],
+        "cons": [
+          "70-80 hour work weeks",
+          "Only top 50-100 MBA grads get offers",
+          "Travel is relentless",
+          "Burnout rate is extreme"
+        ],
+        "abroad": {
+          "level": "Very High",
+          "desc": "McKinsey/BCG/Bain are global. Rotation to NY/London offices common."
+        },
+        "familyAngle": "\"McKinsey mein kaam karta hai\" is the pinnacle of professional achievement in Indian upper-middle class circles.",
+        "eligibility": "Top academics, IIM pedigree, communication excellence.",
+        "educationLevels": [
+          "afterGraduation"
+        ],
+        "prerequisites": {
+          "minEducation": "bachelor",
+          "streams": [
+            "Any"
+          ],
+          "notes": "Needs: IIM MBA from top tiers"
+        }
+      },
+      {
+        "id": "equity-research",
+        "name": "Equity Research Analyst",
+        "icon": "📊",
+        "color": "#2e7d32",
+        "route": "BCom/BBA → Equity Research Internship → Analyst",
+        "timeline": "3-4 years",
+        "difficulty": "High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Equity research values stock picking ability and financial modeling. Tests matter more than marks."
+        },
+        "steps": [
+          {
+            "year": "1-3",
+            "title": "Strong Fundamentals",
+            "desc": "BCom/BBA. Learn financial modeling, excel, valuation."
+          },
+          {
+            "year": "2-3",
+            "title": "Internship at Brokerage",
+            "desc": "Nomura, Goldman Sachs, Kotak, ICICI Securities. Write stock reports."
+          },
+          {
+            "year": "3+",
+            "title": "Equity Research Analyst",
+            "desc": "Cover sectors, write recommendation reports, appear on TV."
+          }
+        ],
+        "colleges": [
+          "No specific college",
+          "Self-learn financial modeling (WSP, Aicen courses)"
+        ],
+        "cost": "₹2-5 Lakh",
+        "salary": {
+          "entry": "₹5-10 LPA",
+          "mid": "₹15-30 LPA",
+          "senior": "₹30-60 LPA",
+          "top": "₹80L-1.5 Cr",
+          "source": "Nomura/Goldman Sachs India salary data"
+        },
+        "exams": [
+          "CFA L1/L2 highly beneficial",
+          "FRM helpful"
+        ],
+        "pros": [
+          "Stock market fascination becomes career",
+          "Intellectual stimulation",
+          "Can start own fund later",
+          "Media presence possible"
+        ],
+        "cons": [
+          "Wrong calls can be public failures",
+          "Pressure to beat benchmarks",
+          "Market volatility affects bonus"
+        ],
+        "abroad": {
+          "level": "High",
+          "desc": "CFA credential opens Wall Street analyst roles."
+        },
+        "familyAngle": "\"Stock market analyst hai? Gambling nahi?\" — actually, it's sophisticated analysis backed by deep financial knowledge.",
+        "eligibility": "Strong financial modeling skills, quantitative mind, market understanding.",
+        "educationLevels": [
+          "afterGraduation"
+        ],
+        "prerequisites": {
+          "minEducation": "bachelor",
+          "streams": [
+            "Commerce",
+            "Science"
+          ],
+          "notes": "Needs: Any graduation"
+        }
+      },
+      {
+        "id": "portfolio-manager",
+        "name": "Portfolio Manager",
+        "icon": "💼",
+        "color": "#1565c0",
+        "route": "BCom/MBA → Fund Houses → PM (10+ yrs experience)",
+        "timeline": "10-12 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. Performance in markets is everything."
+        },
+        "steps": [
+          {
+            "year": "1-4",
+            "title": "Build Knowledge",
+            "desc": "BCom/MBA. Learn investments, markets, risk management."
+          },
+          {
+            "year": "4-8",
+            "title": "Fund Houses",
+            "desc": "ICICI Prudential, HDFC Mutual Fund, Kotak. Start as analyst."
+          },
+          {
+            "year": "8-10+",
+            "title": "Portfolio Manager",
+            "desc": "Manage ₹1000+ Cr AUM. Make daily allocation decisions."
+          }
+        ],
+        "colleges": [
+          "ICICI Prudential, HDFC MF, Kotak, UTI"
+        ],
+        "cost": "₹3-10 Lakh",
+        "salary": {
+          "entry": "₹6-12 LPA",
+          "mid": "₹20-40 LPA",
+          "senior": "₹50-100 LPA",
+          "top": "₹1-3 Cr",
+          "source": "Mutual fund annual reports, AMC data"
+        },
+        "exams": [
+          "CFA L1/L2/L3 (strongly recommended)",
+          "NISM certifications"
+        ],
+        "pros": [
+          "Manage massive portfolios",
+          "Performance-based bonuses are substantial",
+          "Can start own fund",
+          "Respected in finance community"
+        ],
+        "cons": [
+          "Long career path (10+ years to PM)",
+          "Market downturns hurt your reputation",
+          "Constant pressure to beat benchmarks"
+        ],
+        "abroad": {
+          "level": "High",
+          "desc": "Asset management is global. Work for JP Morgan, Fidelity globally."
+        },
+        "familyAngle": "When your 10-year portfolio returns beat Sensex by 200%, family treats you like a god.",
+        "eligibility": "Strong financial acumen, CFA certification, proven track record.",
+        "educationLevels": [
+          "afterGraduation"
+        ],
+        "prerequisites": {
+          "minEducation": "bachelor",
+          "streams": [
+            "Commerce",
+            "Science"
+          ],
+          "notes": "Needs: 10+ years experience"
+        }
+      },
+      {
+        "id": "cfo",
+        "name": "Chief Financial Officer (CFO)",
+        "icon": "👔",
+        "color": "#d32f2f",
+        "route": "CA/CMA → Financial Analyst → Controller → CFO (15+ yrs)",
+        "timeline": "15-20 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. CA/CMA qualification + decades of experience required."
+        },
+        "steps": [
+          {
+            "year": "1-5",
+            "title": "CA/CMA Qualification",
+            "desc": "Build financial expertise foundation."
+          },
+          {
+            "year": "5-10",
+            "title": "Big 4 / Corporate Finance",
+            "desc": "Controller roles, financial planning, mergers."
+          },
+          {
+            "year": "10-15",
+            "title": "Senior Finance Leadership",
+            "desc": "VP Finance, Chief Accounting Officer."
+          },
+          {
+            "year": "15+",
+            "title": "CFO",
+            "desc": "Lead entire finance function. Board member."
+          }
+        ],
+        "colleges": [
+          "Big 4: Deloitte, PwC, EY, KPMG",
+          "Fortune 500 companies"
+        ],
+        "cost": "₹1-4 Lakh (CA)",
+        "salary": {
+          "entry": "₹10-20 LPA",
+          "mid": "₹40-80 LPA",
+          "senior": "₹1-2 Cr",
+          "top": "₹2-5 Cr",
+          "source": "CEO/CFO compensation surveys"
+        },
+        "exams": [
+          "CA qualification mandatory"
+        ],
+        "pros": [
+          "Board-level strategic decisions",
+          "Manage entire capital structure",
+          "Executive compensation packages",
+          "Ultimate finance career"
+        ],
+        "cons": [
+          "Decades of work needed",
+          "Extreme responsibility",
+          "Board pressure during downturns"
+        ],
+        "abroad": {
+          "level": "Very High",
+          "desc": "CA qualification + global experience = CFO roles at multinational HQs."
+        },
+        "familyAngle": "When your child becomes CFO of a Fortune 500 company, that's the ultimate Indian parenting achievement.",
+        "eligibility": "CA/CMA + 15+ years of progressive finance leadership.",
+        "educationLevels": [
+          "afterGraduation"
+        ],
+        "prerequisites": {
+          "minEducation": "bachelor",
+          "streams": [
+            "Commerce"
+          ],
+          "notes": "Needs: CA + 15+ years"
+        }
+      },
+      {
+        "id": "quantitative-analyst",
+        "name": "Quantitative Analyst (Quants)",
+        "icon": "🔢",
+        "color": "#7b1fa2",
+        "route": "BTech/BSc Math → Quant Internship → Trading/Fund",
+        "timeline": "3-4 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Matters",
+          "twelfth": "Matters",
+          "description": "Top-tier quants firms (Goldman, Jane Street) heavily filter on math prowess. 90%+ in 12th math expected."
+        },
+        "steps": [
+          {
+            "year": "1-3",
+            "title": "Strong Math/Physics Background",
+            "desc": "BTech (top college) or BSc Math. Learn probability, statistics, coding."
+          },
+          {
+            "year": "2-3",
+            "title": "Learn Algorithmic Trading",
+            "desc": "Python, C++, machine learning for markets."
+          },
+          {
+            "year": "3+",
+            "title": "Quant Trader / Developer",
+            "desc": "Goldman Sachs, Jane Street, Citadel, Two Sigma."
+          }
+        ],
+        "colleges": [
+          "Jane Street looks for: IIT toppers, CMI, ISI",
+          "Goldman Sachs: Top 20 engineering colleges",
+          "Citadel: Any top tier with strong math"
+        ],
+        "cost": "₹8-12 Lakh (engineering)",
+        "salary": {
+          "entry": "₹20-40 LPA",
+          "mid": "₹50-120 LPA",
+          "senior": "₹1-3 Cr",
+          "top": "₹5-15 Cr",
+          "source": "Jane Street/Goldman Sachs quant salary"
+        },
+        "exams": [
+          "Top coding interviews",
+          "Probability/statistics interview round"
+        ],
+        "pros": [
+          "Highest-paid tech roles globally",
+          "Work on cutting-edge math/AI",
+          "Autonomy in trading strategies",
+          "Massive bonus potential"
+        ],
+        "cons": [
+          "Insanely difficult entrance",
+          "High stress trading environment",
+          "Can lose massive amounts in bad markets",
+          "Need PhD-level math understanding"
+        ],
+        "abroad": {
+          "level": "Very High",
+          "desc": "Quants from India top the global rankings at Jane Street, Citadel. Direct access to trading floors in NYC."
+        },
+        "familyAngle": "\"Ganit se shaadi ki\" — when your quant child is earning ₹5 Cr at Jane Street, families don't ask questions.",
+        "eligibility": "Exceptional math skills. IIT/top college. Coding expertise.",
+        "educationLevels": [
+          "after12"
+        ],
+        "prerequisites": {
+          "minEducation": "12th with Math",
+          "streams": [
+            "Science-PCM"
+          ],
+          "notes": "Needs: 12th PCM from top school"
+        }
+      }
+    ]
+  },
+  "it": {
+    "id": "it",
+    "name": "Information Technology & AI",
+    "icon": "💻",
+    "color": "#00897b",
+    "tagline": "Software, AI, Data Science & Cloud",
+    "description": "For students who love coding, solving tech problems, and building the future.",
+    "preview": [
+      "AI/ML Engineer",
+      "Data Scientist",
+      "Full Stack Developer",
+      "Cloud Architect"
+    ],
+    "paths": [
+      {
+        "id": "ai-ml-engineer",
+        "name": "AI/ML Engineer",
+        "icon": "🤖",
+        "color": "#1a237e",
+        "route": "BTech CS → ML/AI Specialization → Tech Companies",
+        "timeline": "4-5 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. Coding projects and ML portfolio are what matter."
+        },
+        "steps": [
+          {
+            "year": "1-2",
+            "title": "Strong DSA & Math",
+            "desc": "Data structures, algorithms, linear algebra, probability, calculus."
+          },
+          {
+            "year": "2-3",
+            "title": "ML/Deep Learning",
+            "desc": "Learn TensorFlow, PyTorch, LLMs. Build projects on GitHub."
+          },
+          {
+            "year": "3-4",
+            "title": "Internships",
+            "desc": "Google, Microsoft, Amazon, Tesla, DeepMind."
+          },
+          {
+            "year": "4-5",
+            "title": "ML Engineer",
+            "desc": "Production ML systems, LLM applications, computer vision."
+          }
+        ],
+        "colleges": [
+          "IIT Delhi, IIT Bombay, IIT Madras",
+          "BITS Pilani, VIT",
+          "Self-taught with strong portfolio"
+        ],
+        "cost": "₹8-12 Lakh (BTech)",
+        "salary": {
+          "entry": "₹18-35 LPA",
+          "mid": "₹40-80 LPA",
+          "senior": "₹1-2 Cr",
+          "top": "₹3-5 Cr",
+          "source": "Levels.fyi India salaries, Google/Meta pay data"
+        },
+        "exams": [
+          "No formal exams",
+          "Coding interview excellence needed"
+        ],
+        "pros": [
+          "Highest demand tech role globally",
+          "Work on cutting-edge AI models",
+          "AI boom = job security",
+          "Massive salary growth"
+        ],
+        "cons": [
+          "Extremely competitive space",
+          "PhD-level problems sometimes",
+          "Rapidly evolving field = constant learning"
+        ],
+        "abroad": {
+          "level": "Very High",
+          "desc": "Google, Meta, OpenAI hire Indian AI engineers globally. Work visas easiest in this domain."
+        },
+        "familyAngle": "\"AI wale mein kaam karta hai? ChatGPT wala?\" — once they see the salary, suddenly AI is revolutionary.",
+        "eligibility": "BTech CS with strong math. Exceptional coding skills.",
+        "educationLevels": [
+          "after12"
+        ],
+        "prerequisites": {
+          "minEducation": "class12",
+          "streams": [
+            "Science-PCM"
+          ],
+          "notes": "Needs: 12th PCM"
+        }
+      },
+      {
+        "id": "data-scientist",
+        "name": "Data Scientist",
+        "icon": "📈",
+        "color": "#0d47a1",
+        "route": "Any Degree → Data Science Bootcamp/Self-learn → Tech/Finance",
+        "timeline": "3-4 years",
+        "difficulty": "High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. Portfolio of projects speaks louder than credentials."
+        },
+        "steps": [
+          {
+            "year": "1-3",
+            "title": "Any Graduation",
+            "desc": "Any stream. Math/Stats/CS ideal but not required."
+          },
+          {
+            "year": "2-3",
+            "title": "Learn Data Science",
+            "desc": "Python, SQL, Excel, Statistics. Coursera/DataCamp courses."
+          },
+          {
+            "year": "3+",
+            "title": "Data Scientist Role",
+            "desc": "Analytics, predictive modeling, dashboards. Flipkart, Amazon, OYO."
+          }
+        ],
+        "colleges": [
+          "No specific college",
+          "Self-taught with Kaggle projects"
+        ],
+        "cost": "₹2-5 Lakh",
+        "salary": {
+          "entry": "₹6-15 LPA",
+          "mid": "₹20-45 LPA",
+          "senior": "₹50-100 LPA",
+          "top": "₹1-2 Cr",
+          "source": "Levels.fyi, Blind community salary threads"
+        },
+        "exams": [
+          "Kaggle competitions helpful",
+          "Google Cloud/AWS certifications"
+        ],
+        "pros": [
+          "Less gatekeeping than backend engineering",
+          "Every company needs data scientists",
+          "Work across industries"
+        ],
+        "cons": [
+          "70% time = data cleaning, not ML",
+          "Business stakeholder management can be frustrating",
+          "Model performance varies by data quality"
+        ],
+        "abroad": {
+          "level": "Very High",
+          "desc": "Data science is globally in-demand. US H1B lottery friendly."
+        },
+        "familyAngle": "\"Data scientist = engineer?\" — close enough. Respect increases when salary ₹20 LPA mentioned.",
+        "eligibility": "Math/stats background. Problem-solving mindset. Strong coding.",
+        "educationLevels": [
+          "after12",
+          "afterGraduation"
+        ],
+        "prerequisites": {
+          "minEducation": "class12",
+          "streams": [
+            "Any"
+          ],
+          "notes": "Needs: 12th Pass minimum"
+        }
+      },
+      {
+        "id": "fullstack-developer",
+        "name": "Full Stack Developer",
+        "icon": "⚙️",
+        "color": "#1565c0",
+        "route": "BTech CS / Self-taught → Frontend + Backend → Startup/Corporate",
+        "timeline": "3-4 years",
+        "difficulty": "Medium-High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks completely irrelevant. GitHub portfolio is your resume."
+        },
+        "steps": [
+          {
+            "year": "1-2",
+            "title": "Learn Web Stack",
+            "desc": "React/Vue.js (frontend), Node.js/Python (backend), SQL, APIs."
+          },
+          {
+            "year": "2-3",
+            "title": "Build Projects",
+            "desc": "Full applications on GitHub. Deploy on Vercel/Heroku."
+          },
+          {
+            "year": "3+",
+            "title": "Developer Role",
+            "desc": "Startups, Amazon, Google. Feature development, bug fixes, scaling."
+          }
+        ],
+        "colleges": [
+          "No specific college",
+          "Coursera, Scrimba, freeCodeCamp (free)"
+        ],
+        "cost": "₹0-2 Lakh",
+        "salary": {
+          "entry": "₹5-12 LPA",
+          "mid": "₹18-40 LPA",
+          "senior": "₹50-100 LPA",
+          "top": "₹1-2 Cr",
+          "source": "Startups India salary data"
+        },
+        "exams": [
+          "No formal exams",
+          "Coding interviews critical"
+        ],
+        "pros": [
+          "Most accessible tech role",
+          "Can work for any company globally",
+          "Freelancing = high hourly rates",
+          "Startup equity potential"
+        ],
+        "cons": [
+          "High competition at entry level",
+          "Always learning new frameworks",
+          "Can burn out on deadlines"
+        ],
+        "abroad": {
+          "level": "Very High",
+          "desc": "US/UK/Canada desperately need developers. H1B easier, often leads to PR."
+        },
+        "familyAngle": "\"Website banata hai?\" — oversimplification but yes, basically that. Respect increases with each startup exit.",
+        "eligibility": "Basic coding. Problem-solving. Persistence.",
+        "educationLevels": [
+          "after12",
+          "afterGraduation"
+        ],
+        "prerequisites": {
+          "minEducation": "class12",
+          "streams": [
+            "Any"
+          ],
+          "notes": "Needs: 12th Pass"
+        }
+      },
+      {
+        "id": "devops-engineer",
+        "name": "DevOps Engineer",
+        "icon": "🔧",
+        "color": "#ff6f00",
+        "route": "BTech → System Administration → Cloud (AWS/GCP) → DevOps",
+        "timeline": "4-5 years",
+        "difficulty": "High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. Cloud certifications matter."
+        },
+        "steps": [
+          {
+            "year": "1-3",
+            "title": "Systems & Networking",
+            "desc": "Linux, Docker, Kubernetes basics."
+          },
+          {
+            "year": "2-4",
+            "title": "Cloud Platforms",
+            "desc": "AWS (EC2, RDS, Lambda), GCP, Azure. Get certified."
+          },
+          {
+            "year": "3-5",
+            "title": "DevOps Engineer",
+            "desc": "CI/CD pipelines, infrastructure as code, monitoring."
+          }
+        ],
+        "colleges": [
+          "Linux Academy, A Cloud Guru (online)"
+        ],
+        "cost": "₹2-4 Lakh",
+        "salary": {
+          "entry": "₹8-14 LPA",
+          "mid": "₹20-40 LPA",
+          "senior": "₹50-80 LPA",
+          "top": "₹1-1.5 Cr",
+          "source": "AWS salary data"
+        },
+        "exams": [
+          "AWS Certified Solutions Architect",
+          "Kubernetes certification"
+        ],
+        "pros": [
+          "Fewer people know DevOps = less competition",
+          "Everyone needs infrastructure",
+          "Consulting opportunities"
+        ],
+        "cons": [
+          "On-call emergencies at 2 AM",
+          "Infrastructure issues = high pressure",
+          "Less fun than building features"
+        ],
+        "abroad": {
+          "level": "Very High",
+          "desc": "Cloud expertise globally portable. Any tech hub needs DevOps."
+        },
+        "familyAngle": "\"Servers dekhta hai computer par?\" — oversimplification but family gets that it's technical.",
+        "eligibility": "Linux + networking knowledge, cloud platform expertise.",
+        "educationLevels": [
+          "after12"
+        ],
+        "prerequisites": {
+          "minEducation": "class12",
+          "streams": [
+            "Science-PCM"
+          ],
+          "notes": "Needs: 12th Pass"
+        }
+      },
+      {
+        "id": "cybersecurity",
+        "name": "Cybersecurity Analyst",
+        "icon": "🔐",
+        "color": "#c62828",
+        "route": "BTech CS → Security Specialization → Penetration Testing/SOC",
+        "timeline": "4-5 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. Certifications and hacking skills matter."
+        },
+        "steps": [
+          {
+            "year": "1-3",
+            "title": "Network & Systems",
+            "desc": "TCP/IP, Linux, networking protocols."
+          },
+          {
+            "year": "2-4",
+            "title": "Security Fundamentals",
+            "desc": "Cryptography, encryption, vulnerability assessment."
+          },
+          {
+            "year": "3-5",
+            "title": "Ethical Hacker / Penetration Tester",
+            "desc": "CEH, OSCP certifications. Find vulnerabilities for companies."
+          }
+        ],
+        "colleges": [
+          "EC-Council (CEH), Offensive Security (OSCP)"
+        ],
+        "cost": "₹3-8 Lakh",
+        "salary": {
+          "entry": "₹7-14 LPA",
+          "mid": "₹18-35 LPA",
+          "senior": "₹40-80 LPA",
+          "top": "₹1-2 Cr",
+          "source": "Cybersecurity salary surveys"
+        },
+        "exams": [
+          "CEH (Certified Ethical Hacker)",
+          "OSCP (Offensive Security Certified Professional)",
+          "CompTIA Security+"
+        ],
+        "pros": [
+          "Data breaches = constant demand",
+          "High salary growth",
+          "Can start own consulting firm"
+        ],
+        "cons": [
+          "Burnout from on-call SOC work",
+          "Legal liability if breaches happen",
+          "Constant threat landscape evolution"
+        ],
+        "abroad": {
+          "level": "Very High",
+          "desc": "US/UK desperately need cybersecurity experts. USCIS gives green cards."
+        },
+        "familyAngle": "\"Hacker ban gaya?\" — explain that you're a 'white hat' hacker who finds vulnerabilities to protect systems.",
+        "eligibility": "Strong networking + Linux skills, problem-solving mindset.",
+        "educationLevels": [
+          "after12"
+        ],
+        "prerequisites": {
+          "minEducation": "class12",
+          "streams": [
+            "Science-PCM"
+          ],
+          "notes": "Needs: 12th Pass"
+        }
+      },
+      {
+        "id": "cloud-architect",
+        "name": "Cloud Architect (AWS/Azure/GCP)",
+        "icon": "☁️",
+        "color": "#0288d1",
+        "route": "BTech → Cloud Engineer (3 yrs) → Cloud Architect",
+        "timeline": "5-7 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. Cloud expertise and certifications critical."
+        },
+        "steps": [
+          {
+            "year": "1-3",
+            "title": "Cloud Engineer",
+            "desc": "AWS/Azure/GCP. Manage infrastructure, deploy applications."
+          },
+          {
+            "year": "3-5",
+            "title": "Senior Cloud Engineer",
+            "desc": "Design complex cloud systems, cost optimization."
+          },
+          {
+            "year": "5-7",
+            "title": "Cloud Architect",
+            "desc": "Design enterprise-wide cloud strategies."
+          }
+        ],
+        "colleges": [
+          "AWS Training, Microsoft Learn, Google Cloud Academy"
+        ],
+        "cost": "₹2-5 Lakh",
+        "salary": {
+          "entry": "₹10-18 LPA",
+          "mid": "₹28-50 LPA",
+          "senior": "₹60-120 LPA",
+          "top": "₹1-2 Cr",
+          "source": "AWS architect salary data"
+        },
+        "exams": [
+          "AWS Solutions Architect (Professional)",
+          "Azure Architect Expert",
+          "GCP Professional Cloud Architect"
+        ],
+        "pros": [
+          "Every large company migrating to cloud",
+          "Design decisions have massive impact",
+          "Consulting fees can be ₹50L+ per project"
+        ],
+        "cons": [
+          "Steep learning curve",
+          "Cloud costs can spiral if misconfigured",
+          "Global scale problems = extreme pressure"
+        ],
+        "abroad": {
+          "level": "Very High",
+          "desc": "Cloud architects from India work for AWS, Google, Microsoft global offices."
+        },
+        "familyAngle": "\"Clouds mein kaam karta hai?\" — explain that modern IT is built on cloud computing, not on-premises servers.",
+        "eligibility": "Deep cloud platform knowledge, system design expertise.",
+        "educationLevels": [
+          "after12"
+        ],
+        "prerequisites": {
+          "minEducation": "class12",
+          "streams": [
+            "Science-PCM"
+          ],
+          "notes": "Needs: 12th Pass + 5+ years experience"
+        }
+      }
+    ]
+  },
+  "law": {
+    "id": "law",
+    "name": "Law & Civil Services",
+    "icon": "⚖️",
+    "color": "#5e35b1",
+    "tagline": "Justice, Governance & Legal Practice",
+    "description": "For students who believe in the rule of law and want to shape society.",
+    "preview": [
+      "IAS Officer",
+      "Advocate",
+      "IPS Officer",
+      "Judge"
+    ],
+    "paths": [
+      {
+        "id": "ias-officer",
+        "name": "IAS Officer (Indian Administrative Service)",
+        "icon": "🏛️",
+        "color": "#1a237e",
+        "route": "Any Degree → UPSC CSE → IAS Officer",
+        "timeline": "Variable",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. UPSC Civil Services Exam is entirely merit-based."
+        },
+        "steps": [
+          {
+            "year": "1-4",
+            "title": "Any Graduation",
+            "desc": "Can be any stream. Engineering, Commerce, Arts all eligible."
+          },
+          {
+            "year": "2-3 (onwards)",
+            "title": "UPSC CSE Preparation",
+            "desc": "1-2 years self-study or coaching. Indian polity, history, geography, current affairs."
+          },
+          {
+            "year": "Clearing",
+            "title": "Prelims → Mains → Interview",
+            "desc": "Approximately 15-20 lakh attempt, 900-1000 selected as IAS, IPS, IFS combined."
+          },
+          {
+            "year": "4-6",
+            "title": "IAS Officer",
+            "desc": "District Magistrate → Chief Secretary → Additional Chief Secretary."
+          }
+        ],
+        "colleges": [
+          "Any college for graduation",
+          "UPSC Academy, Vajiram & Ravi (coaching)"
+        ],
+        "cost": "₹2-10 Lakh (coaching optional)",
+        "salary": {
+          "entry": "₹56,100/month",
+          "mid": "₹1.5-2.5 LPA",
+          "senior": "₹3-5 LPA",
+          "top": "₹5-8 LPA",
+          "source": "7th Pay Commission, Government of India"
+        },
+        "exams": [
+          "UPSC Civil Services Exam",
+          "No other exams after selection"
+        ],
+        "pros": [
+          "Ultimate job security",
+          "Shape policy at national level",
+          "Pension is 50% of last salary",
+          "Massive social respect"
+        ],
+        "cons": [
+          "2.5L+ attempt, <1% success rate",
+          "Multiple attempts often needed (avg 4-5 attempts)",
+          "Transfers cause family upheaval"
+        ],
+        "abroad": {
+          "level": "Low",
+          "desc": "IAS is India-specific. Government service abroad requires different exams."
+        },
+        "familyAngle": "\"IAS ban gaya\" — this is the peak of Indian achievement narratives. Celebrations rival weddings.",
+        "eligibility": "Bachelor's degree. Age 21-32. Indian citizenship.",
+        "educationLevels": [
+          "afterGraduation"
+        ],
+        "prerequisites": {
+          "minEducation": "bachelor",
+          "streams": [
+            "Any"
+          ],
+          "notes": "Needs: Any graduation"
+        }
+      },
+      {
+        "id": "advocate",
+        "name": "Advocate (Lawyer)",
+        "icon": "📜",
+        "color": "#2c3e50",
+        "route": "12th → BA/BSc → LLB (5 yrs) / LLM → Advocate",
+        "timeline": "5-7 years",
+        "difficulty": "High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant for law practice. Bar exam performance is everything."
+        },
+        "steps": [
+          {
+            "year": "1-3",
+            "title": "Bachelor's Degree (Any Stream)",
+            "desc": "BA, BSc, BCom — doesn't matter. Law doesn't care about your background."
+          },
+          {
+            "year": "3-5",
+            "title": "5-Year LLB",
+            "desc": "Constitutional Law, Criminal Law, Property Law, Contracts. Moot courts, internships."
+          },
+          {
+            "year": "5-6",
+            "title": "Bar Examination",
+            "desc": "State bar exam. Separate for each state."
+          },
+          {
+            "year": "6-7",
+            "title": "Advocate Practice",
+            "desc": "Court appearances, client counseling, case work."
+          }
+        ],
+        "colleges": [
+          "National Law University Delhi, Mumbai, Bangalore",
+          "NALSAR Hyderabad, Gujarat National Law University",
+          "Law colleges affiliated to regular universities"
+        ],
+        "cost": "₹5-15 Lakh (law college)",
+        "salary": {
+          "entry": "₹3-8 LPA",
+          "mid": "₹15-40 LPA",
+          "senior": "₹50-200 LPA",
+          "top": "₹1-5 Cr",
+          "source": "Law practice billing rates, bar association data"
+        },
+        "exams": [
+          "CLAT (Common Law Admission Test)",
+          "State Bar Examination"
+        ],
+        "pros": [
+          "Own practice = unlimited earning potential",
+          "Prestigious profession globally",
+          "Help people with legal issues",
+          "Flexible work structure"
+        ],
+        "cons": [
+          "Initial years have very low income",
+          "Cases can take 5-10 years",
+          "Mental stress from client expectations",
+          "Bar council politics can affect career"
+        ],
+        "abroad": {
+          "level": "Medium",
+          "desc": "Indian law degree doesn't directly transfer. Need bar exam in target country."
+        },
+        "familyAngle": "Lawyer is always respected in Indian society. One of the top aspirational careers.",
+        "eligibility": "Any graduate. Strong communication. Analytical mind.",
+        "educationLevels": [
+          "after12"
+        ],
+        "prerequisites": {
+          "minEducation": "class12",
+          "streams": [
+            "Any"
+          ],
+          "notes": "Needs: 12th Pass"
+        }
+      },
+      {
+        "id": "corporate-lawyer",
+        "name": "Corporate Lawyer",
+        "icon": "💼",
+        "color": "#1565c0",
+        "route": "BA → LLB → Law Firm → Corporate Counsel",
+        "timeline": "6-8 years",
+        "difficulty": "High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. Legal acumen and billable hours are what matter."
+        },
+        "steps": [
+          {
+            "year": "1-4",
+            "title": "Bachelor's + LLB",
+            "desc": "Focus on corporate law, contracts, company law."
+          },
+          {
+            "year": "4-6",
+            "title": "Law Firm Associate",
+            "desc": "Top firms: Trilegal, Khaitan & Co, J Sagar Associates. M&A, contracts, IP law."
+          },
+          {
+            "year": "6-8",
+            "title": "Senior Associate / Counsel",
+            "desc": "Lead transactions, team management."
+          }
+        ],
+        "colleges": [
+          "National Law School India University",
+          "Symbiosis Law School",
+          "NALSAR"
+        ],
+        "cost": "₹5-15 Lakh",
+        "salary": {
+          "entry": "₹8-15 LPA",
+          "mid": "₹25-50 LPA",
+          "senior": "₹60-150 LPA",
+          "top": "₹2-5 Cr",
+          "source": "Top law firms billing data"
+        },
+        "exams": [
+          "CLAT"
+        ],
+        "pros": [
+          "M&A deals worth ₹1000+ Cr",
+          "Work on cutting-edge commercial transactions",
+          "Lucrative practice"
+        ],
+        "cons": [
+          "80-hour work weeks during deals",
+          "Document review can be monotonous",
+          "Client pressure is relentless"
+        ],
+        "abroad": {
+          "level": "Medium",
+          "desc": "Top law firms have London/Singapore offices. Transfer possible for senior lawyers."
+        },
+        "familyAngle": "\"Corporate lawyer\" sounds more impressive than \"lawyer\" — implies high-value work.",
+        "eligibility": "National Law School degree preferred. Excellent legal writing.",
+        "educationLevels": [
+          "after12"
+        ],
+        "prerequisites": {
+          "minEducation": "class12",
+          "streams": [
+            "Any"
+          ],
+          "notes": "Needs: 12th Pass + top law school"
+        }
       }
     ]
   },
@@ -5882,6 +7046,912 @@ export const STREAMS = {
           ],
           "notes": "Needs: Vocational / Any"
         }
+      }
+    ]
+  },
+  "engineering": {
+    "id": "engineering",
+    "name": "Engineering & Manufacturing",
+    "icon": "🏗️",
+    "color": "#FF6B35",
+    "tagline": "Building the physical and digital world",
+    "description": "For students who love building, creating, and solving complex problems.",
+    "preview": [
+      "Mechanical Engineer",
+      "Civil Engineer",
+      "Electrical Engineer",
+      "Software Engineer"
+    ],
+    "paths": [
+      {
+        "id": "mechanical-engineer",
+        "name": "Mechanical Engineer",
+        "icon": "⚙️",
+        "color": "#D32F2F",
+        "route": "12th PCM → JEE → BTech Mechanical (4 yrs)",
+        "timeline": "4-6 years",
+        "difficulty": "High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. JEE rank is everything."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BTech Mechanical", "desc": "Design, thermodynamics, manufacturing, CAD. Internships at Maruti, Bajaj, TATA."},
+          {"year": "4-6", "title": "Career", "desc": "Manufacturing engineer, design engineer, plant manager."}
+        ],
+        "colleges": ["IIT/NIT", "BITS Pilani", "VIT"],
+        "cost": "₹8-20 Lakh",
+        "salary": {"entry": "₹8-15 LPA", "mid": "₹20-40 LPA", "senior": "₹50-100 LPA", "top": "₹1-2 Cr", "source": "IIT placement data"},
+        "exams": ["JEE Main", "JEE Advanced"],
+        "pros": ["High demand in manufacturing", "Design freedom", "Excellent ROI"],
+        "cons": ["Factory work can be tedious", "Limited creative outlets", "Automation reducing jobs"],
+        "abroad": {"level": "High", "desc": "Mechanical skills transfer globally. Manufacturing hubs in Germany, Japan, USA."},
+        "familyAngle": "Engineer = instant family pride. Mechanical engineer = respected profession.",
+        "eligibility": "12th PCM. JEE qualification.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCM"], "notes": "Needs: 12th PCM"}
+      },
+      {
+        "id": "civil-engineer",
+        "name": "Civil Engineer",
+        "icon": "🏢",
+        "color": "#1976D2",
+        "route": "12th PCM → JEE → BTech Civil (4 yrs)",
+        "timeline": "4-6 years",
+        "difficulty": "High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. JEE rank matters."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BTech Civil", "desc": "Structural design, road construction, water resources, geotechnical."},
+          {"year": "4-6", "title": "Career", "desc": "Site engineer, project manager, structural consultant."}
+        ],
+        "colleges": ["IIT/NIT", "BITS", "VIT"],
+        "cost": "₹8-20 Lakh",
+        "salary": {"entry": "₹6-12 LPA", "mid": "₹18-35 LPA", "senior": "₹40-80 LPA", "top": "₹80L-1.5 Cr", "source": "IIT placement data"},
+        "exams": ["JEE Main", "JEE Advanced"],
+        "pros": ["Infrastructure boom in India", "Tangible impact (buildings/roads)", "Project management skills"],
+        "cons": ["Site work is physically demanding", "Weather exposure", "Project delays common"],
+        "abroad": {"level": "Medium", "desc": "Civil engineering valued globally. Middle East construction hubs pay well."},
+        "familyAngle": "Civil engineer = traditional respect. Infrastructure development = nation building.",
+        "eligibility": "12th PCM. JEE rank.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCM"], "notes": "Needs: 12th PCM"}
+      },
+      {
+        "id": "electrical-engineer",
+        "name": "Electrical Engineer",
+        "icon": "⚡",
+        "color": "#F57C00",
+        "route": "12th PCM → JEE → BTech Electrical (4 yrs)",
+        "timeline": "4-6 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. JEE rank critical."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BTech Electrical", "desc": "Power systems, electronics, control systems, renewable energy."},
+          {"year": "4-6", "title": "Career", "desc": "Power engineer, renewable energy specialist, electrical design."}
+        ],
+        "colleges": ["IIT/NIT top tier"],
+        "cost": "₹8-20 Lakh",
+        "salary": {"entry": "₹8-16 LPA", "mid": "₹22-45 LPA", "senior": "₹50-100 LPA", "top": "₹1-2 Cr", "source": "IIT data"},
+        "exams": ["JEE Advanced"],
+        "pros": ["Energy boom", "Renewable energy opportunities", "High salary"],
+        "cons": ["Theoretically heavy", "Complex concepts", "Limited hands-on initially"],
+        "abroad": {"level": "Very High", "desc": "Power engineering globally in-demand. Germany, USA, Middle East."},
+        "familyAngle": "Electrical engineer = smart student perception. Competitive entry.",
+        "eligibility": "12th PCM. Top JEE rank.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCM"], "notes": "Needs: 12th PCM, top rank"}
+      },
+      {
+        "id": "chemical-engineer",
+        "name": "Chemical Engineer",
+        "icon": "🧪",
+        "color": "#7B1FA2",
+        "route": "12th PCM → JEE → BTech Chemical (4 yrs)",
+        "timeline": "4-6 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant for JEE."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BTech Chemical", "desc": "Organic chemistry, process design, plant operations, pharmaceuticals."},
+          {"year": "4-6", "title": "Career", "desc": "Petroleum engineer, pharmaceutical engineer, process engineer."}
+        ],
+        "colleges": ["IIT Bombay/Delhi/Madras", "NIT Warangal"],
+        "cost": "₹8-20 Lakh",
+        "salary": {"entry": "₹12-20 LPA", "mid": "₹30-60 LPA", "senior": "₹70-150 LPA", "top": "₹1-3 Cr", "source": "IIT ChemE data"},
+        "exams": ["JEE Advanced"],
+        "pros": ["Highest average salary among engineers", "Pharma/petroleum boom", "Global demand"],
+        "cons": ["Plant conditions harsh", "Health hazards potential", "Strict environmental laws"],
+        "abroad": {"level": "Very High", "desc": "Chemical engineers in USA: $120K+. Middle East petroleum sector highly paid."},
+        "familyAngle": "Chemical engineer = prestigious. High salary perception = family celebration.",
+        "eligibility": "12th PCM. Strong JEE rank needed.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCM"], "notes": "Needs: 12th PCM"}
+      },
+      {
+        "id": "aerospace-engineer",
+        "name": "Aerospace Engineer",
+        "icon": "✈️",
+        "color": "#0288D1",
+        "route": "12th PCM → JEE Advanced → BTech Aerospace (4 yrs)",
+        "timeline": "4-6 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks don't matter for JEE."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BTech Aerospace", "desc": "Aircraft design, fluid mechanics, control systems, space technology."},
+          {"year": "4-6", "title": "Career", "desc": "ISRO scientist, airline engineer, defense contractor."}
+        ],
+        "colleges": ["IIT Bombay", "IIT Madras", "IIST Thiruvananthapuram"],
+        "cost": "₹8-20 Lakh",
+        "salary": {"entry": "₹10-18 LPA", "mid": "₹25-50 LPA", "senior": "₹60-120 LPA", "top": "₹1-2 Cr", "source": "ISRO/Defense salaries"},
+        "exams": ["JEE Advanced (top cutoff)"],
+        "pros": ["Work on space/aircraft", "ISRO prestige", "High-tech work"],
+        "cons": ["Very few seats (~50 in IIT)", "Theoretical heavy", "Government job constraints if ISRO route"],
+        "abroad": {"level": "Very High", "desc": "NASA, SpaceX, Airbus hire Indian aerospace engineers. US salary: $130K+."},
+        "familyAngle": "\"ISRO mein kaam karega?\" — India's space program = national pride. Family reaches nirvana."},
+        "eligibility": "12th PCM. Very high JEE rank (top 50-100).",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCM"], "notes": "Needs: 12th PCM, top 1% JEE rank"}
+      },
+      {
+        "id": "automobile-engineer",
+        "name": "Automobile Engineer",
+        "icon": "🚗",
+        "color": "#E53935",
+        "route": "12th PCM → JEE/BITSAT → BTech Mechanical/Automotive (4 yrs)",
+        "timeline": "4-6 years",
+        "difficulty": "High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BTech Automotive/Mechanical", "desc": "Vehicle design, engine systems, emissions control, EV technology."},
+          {"year": "4-6", "title": "Career", "desc": "Design engineer at Maruti/Hyundai/Skoda, electric vehicle startup engineer."}
+        ],
+        "colleges": ["BITS Pilani", "VIT", "IIT Bombay Mechanical with auto focus"],
+        "cost": "₹10-20 Lakh",
+        "salary": {"entry": "₹7-14 LPA", "mid": "₹18-40 LPA", "senior": "₹50-100 LPA", "top": "₹80L-1.5 Cr", "source": "Maruti/Hyundai salaries"},
+        "exams": ["JEE Main", "BITSAT"],
+        "pros": ["Automobile industry boom", "EV revolution", "Hands-on design work"],
+        "cons": ["Manufacturing plant work", "Design constraints", "Emission regulations complexity"],
+        "abroad": {"level": "High", "desc": "Tesla, BMW, Mercedes hire Indian auto engineers. Germany = auto hub."},
+        "familyAngle": "Working on car design = cool factor. \"Maruti engineers ban gaya\" = pride.",
+        "eligibility": "12th PCM. Good JEE rank.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCM"], "notes": "Needs: 12th PCM"}
+      },
+      {
+        "id": "production-engineer",
+        "name": "Production & Manufacturing Engineer",
+        "icon": "🏭",
+        "color": "#C62828",
+        "route": "12th PCM → Engineering → Manufacturing Specialization",
+        "timeline": "4-6 years",
+        "difficulty": "Medium-High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks don't matter for JEE."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BTech Production/Manufacturing", "desc": "Quality control, process optimization, lean manufacturing, Six Sigma."},
+          {"year": "4-6", "title": "Career", "desc": "Production manager, quality engineer, lean consultant."}
+        ],
+        "colleges": ["NIT Warangal", "IIT Delhi", "BITS"],
+        "cost": "₹8-20 Lakh",
+        "salary": {"entry": "₹6-12 LPA", "mid": "₹16-32 LPA", "senior": "₹40-80 LPA", "top": "₹70L-1 Cr", "source": "Manufacturing industry data"},
+        "exams": ["JEE Main/BITSAT"],
+        "pros": ["Manufacturing boom in India", "Quality management skills", "Consulting opportunities"],
+        "cons": ["Plant floor work", "Shift work possible", "Quality issues = high stress"],
+        "abroad": {"level": "Medium", "desc": "Manufacturing valued globally. Germany, Japan, USA automotive sector."},
+        "familyAngle": "Production engineer = practical engineer. \"Factory chalata hai\" = respect.",
+        "eligibility": "12th PCM. Engineering degree.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCM"], "notes": "Needs: 12th PCM"}
+      },
+      {
+        "id": "vlsi-engineer",
+        "name": "VLSI Design Engineer",
+        "icon": "🔌",
+        "color": "#1565C0",
+        "route": "BTech ECE/CSE → VLSI Specialization → Semiconductor Company",
+        "timeline": "4-6 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. VLSI skills through specialization/internships matter."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BTech ECE with VLSI focus", "desc": "Digital design, Verilog/VHDL, chip design, EDA tools."},
+          {"year": "3-5", "title": "VLSI Internships", "desc": "Intel, Qualcomm, Broadcom, Synopsys. Design experience critical."},
+          {"year": "4-6", "title": "VLSI Design Engineer", "desc": "Chip design, physical design, verification engineer."}
+        ],
+        "colleges": ["IIT Bombay", "IIT Madras", "BITS Pilani"],
+        "cost": "₹8-20 Lakh",
+        "salary": {"entry": "₹15-25 LPA", "mid": "₹35-70 LPA", "senior": "₹80-150 LPA", "top": "₹1-3 Cr", "source": "Qualcomm/Intel India salaries"},
+        "exams": ["JEE Advanced"],
+        "pros": ["Semiconductor boom", "High salary", "Cutting-edge technology"],
+        "cons": ["Extremely competitive", "Complex domain", "Few companies in India"],
+        "abroad": {"level": "Very High", "desc": "Silicon Valley, Taiwan, South Korea. US salary: $150-250K+."},
+        "familyAngle": "\"Chip design karta hai\" = maximum technical prestige. Family treats as genius.",
+        "eligibility": "BTech ECE. Strong digital design skills. IIT pedigree preferred.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCM"], "notes": "Needs: BTech ECE from top college"}
+      },
+      {
+        "id": "robotics-engineer",
+        "name": "Robotics & Automation Engineer",
+        "icon": "🤖",
+        "color": "#D32F2F",
+        "route": "BTech Mechanical/ECE → Robotics Specialization → Tech Companies",
+        "timeline": "4-6 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BTech Mechanical/Electrical with Robotics", "desc": "Control systems, actuators, sensors, AI integration."},
+          {"year": "2-4", "title": "Robotics Projects", "desc": "ROS (Robot Operating System), build robots, IITK/IITB robotics clubs."},
+          {"year": "4-6", "title": "Robotics Engineer", "desc": "Boston Dynamics type roles, industrial automation, startup robotics."}
+        ],
+        "colleges": ["IIT Bombay", "IIT Madras", "BITS Pilani"],
+        "cost": "₹8-20 Lakh",
+        "salary": {"entry": "₹12-20 LPA", "mid": "₹30-60 LPA", "senior": "₹70-150 LPA", "top": "₹1-3 Cr", "source": "Robotics startup data"},
+        "exams": ["JEE Advanced"],
+        "pros": ["AI + Robotics boom", "Cutting-edge technology", "High salary"],
+        "cons": ["Very few roles in India", "Global competition", "Niche domain"],
+        "abroad": {"level": "Very High", "desc": "Boston Dynamics, Tesla, BMW. Robotics engineers in USA: $150-250K+."},
+        "familyAngle": "\"Robots banata hai?\" = ultimate cool factor.",
+        "eligibility": "BTech Mechanical/ECE. Robotics project experience.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCM"], "notes": "Needs: BTech from IIT"}
+      }
+    ]
+  },
+  "healthcare": {
+    "id": "healthcare",
+    "name": "Healthcare & Medical",
+    "icon": "🏥",
+    "color": "#E63946",
+    "tagline": "Saving lives, improving health",
+    "description": "For students passionate about medicine, healthcare, and patient care.",
+    "preview": [
+      "Doctor (MBBS)",
+      "Dentist",
+      "Nurse",
+      "Pharmacist"
+    ],
+    "paths": [
+      {
+        "id": "doctor-mbbs",
+        "name": "Doctor (MBBS)",
+        "icon": "⚕️",
+        "color": "#C62828",
+        "route": "12th PCB → NEET → MBBS (5.5 yrs) → PG (3-5 yrs)",
+        "timeline": "5.5-10.5 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Matters",
+          "description": "12th marks matter for NEET eligibility but NEET score is everything. Need 50% aggregate in PCB."
+        },
+        "steps": [
+          {"year": "1-2", "title": "NEET Preparation", "desc": "Biology, Chemistry, Physics. Coaching or self-study. ~12-15 Lakh aspirants, ~18K MBBS seats."},
+          {"year": "2-7", "title": "MBBS (5.5 years)", "desc": "Anatomy, physiology, pathology, clinical training. Hospital rotations."},
+          {"year": "7-10", "title": "PG Specialization (optional)", "desc": "MD/MS in specialty. DNB or DM super-specialty. Neet competitive exam."}
+        ],
+        "colleges": ["AIIMS", "CMC Vellore", "St. Johns Bangalore", "Government medical colleges"],
+        "cost": "₹10-50 Lakh (government ~₹5L, private ~₹50L+)",
+        "salary": {"entry": "₹4-7 LPA (resident doctor)", "mid": "₹15-35 LPA", "senior": "₹40-100 LPA", "top": "₹1-5 Cr", "source": "Medical council salary surveys"},
+        "exams": ["NEET (undergraduate)", "NEET-PG (postgraduate)", "FMGE (foreign medical grad)"],
+        "pros": ["Ultimate prestige in India", "Life-long job security", "Help people directly", "Unlimited earning through private practice"],
+        "cons": ["Extremely competitive (15M attempt, 18K seats)", "Burnout from on-call duties", "Emotional trauma from patient loss"],
+        "abroad": {"level": "High", "desc": "MBBS + FMGE → USA/UK practice. US salary: $200-400K+."},
+        "familyAngle": "\"Doctor ban gaya\" — this is the ultimate Indian achievement. Even above engineer now.",
+        "eligibility": "12th PCB with minimum 50%. NEET qualification.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCB"], "notes": "Needs: 12th PCB, NEET qualifying"}
+      },
+      {
+        "id": "dentist-bds",
+        "name": "Dentist (BDS)",
+        "icon": "🦷",
+        "color": "#1565C0",
+        "route": "12th PCB → NEET → BDS (4 yrs) → MDS (3 yrs)",
+        "timeline": "4-7 years",
+        "difficulty": "High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "NEET score matters. 12th marks for eligibility only."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BDS (4 years)", "desc": "Prosthodontics, orthodontics, periodontology, surgery. Clinic rotations."},
+          {"year": "4-7", "title": "MDS Specialization (optional)", "desc": "Orthodontist, surgeon, implantologist."}
+        ],
+        "colleges": ["Sri Ramachandra", "Manipal", "Government dental colleges"],
+        "cost": "₹8-30 Lakh",
+        "salary": {"entry": "₹3-6 LPA", "mid": "₹12-25 LPA", "senior": "₹30-70 LPA", "top": "₹50L-1 Cr", "source": "Dental association data"},
+        "exams": ["NEET"],
+        "pros": ["Dental practice lucrative", "Own clinic potential", "Better work-life balance than MD", "Aesthetic satisfaction"],
+        "cons": ["Physical strain on back/hands", "Phobia patients draining", "Lower status than doctors"],
+        "abroad": {"level": "Medium", "desc": "Australia, Canada value Indian dentists. Licensing exams needed."},
+        "familyAngle": "\"Dentist ban gaya\" = good career but slightly lower than doctor in family hierarchy.",
+        "eligibility": "12th PCB. NEET score (lower cutoff than medicine).",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCB"], "notes": "Needs: 12th PCB, NEET"}
+      },
+      {
+        "id": "nurse-bsc",
+        "name": "Nurse (BSc/ANM)",
+        "icon": "👩‍⚕️",
+        "color": "#E91E63",
+        "route": "12th PCB → Nursing College → BSc/GNM (3-4 yrs)",
+        "timeline": "3-4 years",
+        "difficulty": "Medium",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks for eligibility. Nursing merit entrance or NEET sub-specialty."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BSc Nursing (4 years)", "desc": "Anatomy, pharmacology, patient care, clinical training."},
+          {"year": "4+", "title": "Nursing Career", "desc": "Hospital nurse, ICU, community health worker, nursing educator."}
+        ],
+        "colleges": ["AIIMS", "CMC", "Government nursing colleges", "Private nursing colleges"],
+        "cost": "₹3-15 Lakh",
+        "salary": {"entry": "₹2.5-4.5 LPA", "mid": "₹6-12 LPA", "senior": "₹15-30 LPA", "top": "₹35-60 LPA", "source": "Hospital salary data"},
+        "exams": ["NEET (some colleges)", "Nursing entrance exams"],
+        "pros": ["Critical healthcare demand", "Patient care satisfaction", "International opportunities", "Flexible shifts"],
+        "cons": ["Physical exhaustion from 12-hour shifts", "Low pay initially", "Stress from patient emergencies"],
+        "abroad": {"level": "Very High", "desc": "US, UK, Australia desperately need nurses. Work visa easy. Salary: $50-80K USD+."},
+        "familyAngle": "Nursing = respectable but lower status than doctor in traditional families. Modern families appreciate it.",
+        "eligibility": "12th PCB or 10+2 any stream. English proficiency.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCB"], "notes": "Needs: 12th"}
+      },
+      {
+        "id": "pharmacist",
+        "name": "Pharmacist (BPharm)",
+        "icon": "💊",
+        "color": "#00695C",
+        "route": "12th PCB → BPharm (4 yrs) → MPharm (2 yrs)",
+        "timeline": "4-6 years",
+        "difficulty": "Medium-High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Matters slightly",
+          "description": "BPharm entrance or NEET. 12th marks for eligibility."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BPharm (4 years)", "desc": "Pharmaceutics, pharmacology, drug formulation, clinical pharmacy."},
+          {"year": "4-6", "title": "MPharm (optional)", "desc": "Specialization in pharmaceutics, pharmacology, or clinical pharmacy."}
+        ],
+        "colleges": ["BITS Pilani", "Manipal", "Government pharmacy colleges"],
+        "cost": "₹5-20 Lakh",
+        "salary": {"entry": "₹3-6 LPA", "mid": "₹8-18 LPA", "senior": "₹22-50 LPA", "top": "₹60L-1 Cr", "source": "Pharma industry data"},
+        "exams": ["NEET (some colleges)", "BPharm entrance"],
+        "pros": ["Pharma industry boom", "Medicine discovery work", "Research opportunities", "Clinical role impact"],
+        "cons": ["Regulatory compliance heavy", "Quality assurance tedious", "Limited creative freedom"],
+        "abroad": {"level": "High", "desc": "US, Europe need pharmacists. Regulatory pathways available."},
+        "familyAngle": "\"Pharmacist ban gaya\" = decent career. Pharmacy degree = earning potential.",
+        "eligibility": "12th PCB. BPharm entrance or merit.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCB"], "notes": "Needs: 12th PCB"}
+      },
+      {
+        "id": "physiotherapist",
+        "name": "Physiotherapist",
+        "icon": "🧘",
+        "color": "#4CAF50",
+        "route": "12th PCB → BPTh (4 yrs) → Specialization",
+        "timeline": "4-6 years",
+        "difficulty": "Medium",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks for eligibility. BPTh merit-based entrance."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BPTh (4 years)", "desc": "Anatomy, physiology, sports medicine, rehabilitation."},
+          {"year": "4-6", "title": "MPTh (optional)", "desc": "Specialization in sports, orthopedic, neuro rehabilitation."}
+        ],
+        "colleges": ["AIIMS", "Manipal", "Government colleges"],
+        "cost": "₹4-15 Lakh",
+        "salary": {"entry": "₹2-4 LPA", "mid": "₹6-15 LPA", "senior": "₹18-40 LPA", "top": "₹40-80 LPA", "source": "Healthcare data"},
+        "exams": ["BPTh entrance", "some colleges NEET"],
+        "pros": ["Sports industry boom", "Own clinic potential", "Hands-on healing", "Flexible practice"],
+        "cons": ["Physical demands on therapist", "Patient compliance issues", "Lower pay initially"],
+        "abroad": {"level": "Medium", "desc": "Sports teams, rehab centers globally. Licensing varies by country."},
+        "familyAngle": "\"Physiotherapist ban gaya\" = health professional respect.",
+        "eligibility": "12th PCB. BPTh entrance.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCB"], "notes": "Needs: 12th PCB"}
+      },
+      {
+        "id": "veterinary-doctor",
+        "name": "Veterinary Doctor",
+        "icon": "🐾",
+        "color": "#FF6F00",
+        "route": "12th PCB → B.V.Sc. (5 yrs) → M.V.Sc. (2 yrs)",
+        "timeline": "5-7 years",
+        "difficulty": "Medium-High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Vet entrance exam or merit. Board marks for eligibility."
+        },
+        "steps": [
+          {"year": "1-5", "title": "BVSc (5 years)", "desc": "Veterinary anatomy, medicine, surgery, animal husbandry."},
+          {"year": "5-7", "title": "MVSc (optional)", "desc": "Surgery, medicine, infectious diseases specialization."}
+        ],
+        "colleges": ["IVRI Izatnagar", "GADVASU", "Veterinary colleges"],
+        "cost": "₹3-15 Lakh",
+        "salary": {"entry": "₹2.5-5 LPA", "mid": "₹8-18 LPA", "senior": "₹20-45 LPA", "top": "₹40-80 LPA", "source": "Vet college data"},
+        "exams": ["Veterinary entrance", "B.V.Sc."],
+        "pros": ["Pet industry boom", "Own clinic potential", "Government vet jobs secure", "Animal welfare impact"],
+        "cons": ["Lower prestige than human medicine", "Difficult cases emotionally", "Physical risk from animals"],
+        "abroad": {"level": "Low-Medium", "desc": "Livestock/pet care internationally available. Licensing required."},
+        "familyAngle": "\"Vet ban gaya\" = respectable but less prestigious than human medicine.",
+        "eligibility": "12th PCB. Vet entrance.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCB"], "notes": "Needs: 12th PCB"}
+      }
+    ]
+  },
+  "creative": {
+    "id": "creative",
+    "name": "Creative, Media & Entertainment",
+    "icon": "🎬",
+    "color": "#FF1744",
+    "tagline": "Creating, storytelling, and entertaining the world",
+    "description": "For students who want to create, express, and entertain.",
+    "preview": [
+      "Film Director",
+      "Actor",
+      "Content Creator",
+      "Graphic Designer"
+    ],
+    "paths": [
+      {
+        "id": "film-director",
+        "name": "Film Director",
+        "icon": "🎥",
+        "color": "#D32F2F",
+        "route": "BA/BFA Film → Assistant Director → Director",
+        "timeline": "Variable",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. Creativity, vision, and networking matter."
+        },
+        "steps": [
+          {"year": "1-3", "title": "Film School (FTII/BITS)", "desc": "Cinematography, direction, editing, screenplay writing."},
+          {"year": "3-7", "title": "Assistant Director", "desc": "Work on 3-5 films. Learn on-set management, storytelling."},
+          {"year": "7+", "title": "Director", "desc": "Debut film, commercial success, critical acclaim."}
+        ],
+        "colleges": ["FTII Pune", "BITS Goa", "Self-taught route (Aamir Khan, SS Rajamouli paths)"],
+        "cost": "₹0-20 Lakh (film school or self-taught)",
+        "salary": {"entry": "₹0-3 LPA (assistant director)", "mid": "₹1-5 Cr (per film)", "senior": "₹10-50 Cr", "top": "₹100+ Cr", "source": "Bollywood director fees"},
+        "exams": ["FTII entrance exam", "No formal exams for self-taught"],
+        "pros": ["Creative expression at highest level", "Fame and recognition", "Massive financial upside", "Legacy building"],
+        "cons": ["Extreme competition", "First 5-10 films may fail", "Audience reception unpredictable", "Very high financial risk"],
+        "abroad": {"level": "High", "desc": "International film festival recognition. Hollywood opportunities post-success."},
+        "familyAngle": "\"Director ban gaya\" = ultimate prestige if successful. Massive failure = family embarrassment.",
+        "eligibility": "Storytelling passion, visual sense, persistence through rejection.",
+        "educationLevels": ["after12", "afterGraduation"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Any"], "notes": "Needs: Passion + persistence"}
+      },
+      {
+        "id": "actor-actress",
+        "name": "Actor / Actress",
+        "icon": "🎭",
+        "color": "#E91E63",
+        "route": "Theatre → Drama School / Auditions → Bollywood/OTT",
+        "timeline": "Variable",
+        "difficulty": "Unpredictable",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks completely irrelevant."
+        },
+        "steps": [
+          {"year": "1-3", "title": "Drama/Acting Training", "desc": "Theatre, acting classes, performance experience."},
+          {"year": "2-5", "title": "Auditions", "desc": "Theatre plays, webseries, film auditions. Lots of rejection."},
+          {"year": "5+", "title": "Breakthrough", "desc": "Hit role in series/film. Career trajectory post-hit."}
+        ],
+        "colleges": ["NSD Delhi", "Barry John Acting Studio", "Theatre groups", "Self-taught route"],
+        "cost": "₹0-20 Lakh",
+        "salary": {"entry": "₹0-1 LPA (struggling)", "mid": "₹5-50 LPA (web series stars)", "senior": "₹50L-5 Cr", "top": "₹5-50+ Cr", "source": "Industry data"},
+        "exams": ["NSD entrance (if formal route)", "Continuous audition rejections"],
+        "pros": ["Fame", "Creative expression", "Massive earning potential if hit", "Cultural impact"],
+        "cons": ["90% never get lead roles", "Constant rejection", "Pressure on looks/youth", "No job security"],
+        "abroad": {"level": "Medium", "desc": "Bollywood success → Hollywood roles (Priyanka, Deepika path). International productions."},
+        "familyAngle": "\"Actor ban gaya\" = family prestige if famous. Struggling actor = family shame in traditional families.",
+        "eligibility": "Acting ability, looks (for lead roles), persistence.",
+        "educationLevels": ["after12", "afterGraduation"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Any"], "notes": "Needs: Talent + luck + persistence"}
+      },
+      {
+        "id": "content-creator",
+        "name": "Content Creator / YouTuber",
+        "icon": "📹",
+        "color": "#FF5252",
+        "route": "12th → YouTube/Instagram → Brand Deals → Full-time Creator",
+        "timeline": "1-3 years",
+        "difficulty": "Medium-High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. Subscriber growth is your grade."
+        },
+        "steps": [
+          {"year": "0-1", "title": "Start Creating", "desc": "Pick niche (tech, comedy, education, gaming, vlogs). Create 50-100 videos."},
+          {"year": "1-2", "title": "Monetization", "desc": "1K subscribers + 4K watch hours = YouTube Partner Program. Brand deals at 10K+."},
+          {"year": "2-3", "title": "Full-time Creator", "desc": "AdSense + sponsorships + affiliate marketing = income."}
+        ],
+        "colleges": ["No college needed"],
+        "cost": "₹20K-1 Lakh (camera, lighting, editing software)",
+        "salary": {"entry": "₹0 (first 1-2 years)", "mid": "₹2-10 LPA", "senior": "₹15-50 LPA", "top": "₹1-5 Cr", "source": "Famous YouTuber earnings"},
+        "exams": ["No exams"],
+        "pros": ["No gatekeeper", "Start immediately with phone", "Viral potential", "Passive income through AdSense", "Build personal brand"],
+        "cons": ["90% channels fail <1K subs", "Algorithm unpredictable", "Burnout from constant content", "Harassment online"],
+        "abroad": {"level": "High", "desc": "YouTube global. Creator earnings in USD. International sponsorships."},
+        "familyAngle": "\"YouTuber hai?\" = family skepticism initially. Huge channel (1M+ subs) = respect and income proof.",
+        "eligibility": "Consistency, video production skills, niche expertise, luck.",
+        "educationLevels": ["after10"],
+        "prerequisites": {"minEducation": "class10", "streams": ["Any"], "notes": "Needs: Phone + internet + persistence"}
+      },
+      {
+        "id": "graphic-designer",
+        "name": "Graphic Designer",
+        "icon": "🎨",
+        "color": "#9C27B0",
+        "route": "12th → Design School / Self-taught → Design Agency / Freelance",
+        "timeline": "3-4 years",
+        "difficulty": "Medium",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. Portfolio is your resume."
+        },
+        "steps": [
+          {"year": "1-2", "title": "Learn Design", "desc": "Adobe Creative Suite (Photoshop, Illustrator, InDesign). Design fundamentals, typography, color theory."},
+          {"year": "2-3", "title": "Build Portfolio", "desc": "5-10 projects. Logo design, branding, print design, web design."},
+          {"year": "3-4", "title": "Career", "desc": "Design agency → Senior designer → Art director. Or freelance on Fiverr/Upwork."}
+        ],
+        "colleges": ["NID Ahmedabad", "IIAD Delhi", "Self-taught via Coursera/YouTube"],
+        "cost": "₹0-10 Lakh",
+        "salary": {"entry": "₹3-6 LPA", "mid": "₹10-25 LPA", "senior": "₹25-50 LPA", "top": "₹50L-1 Cr", "source": "Design agency salary data"},
+        "exams": ["No formal exams. Portfolio reviews are the exam."],
+        "pros": ["Creative work", "High demand", "Freelancing pays well", "Remote work friendly"],
+        "cons": ["Client feedback brutal", "Revision fatigue", "Eye strain", "Trends constantly change"],
+        "abroad": {"level": "High", "desc": "Design agencies global. Freelancing on international platforms. US salary: $60-120K+."},
+        "familyAngle": "\"Designer ban gaya\" = okay career. Creative but lower status than engineer.",
+        "eligibility": "Visual sense, design software skills, creativity.",
+        "educationLevels": ["after12", "afterGraduation"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Any"], "notes": "Needs: Design portfolio"}
+      },
+      {
+        "id": "music-producer",
+        "name": "Music Producer / Composer",
+        "icon": "🎵",
+        "color": "#FF6D00",
+        "route": "Music Training → Music Production → Album / Film Music",
+        "timeline": "3-5 years",
+        "difficulty": "High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant."
+        },
+        "steps": [
+          {"year": "1-3", "title": "Music Training", "desc": "Instrument (piano, guitar), music theory, composition, sound design."},
+          {"year": "2-4", "title": "Production Skills", "desc": "DAW (FL Studio, Logic Pro, Ableton). Learn mixing, mastering."},
+          {"year": "3-5", "title": "Career", "desc": "Film music composer, music producer for films/albums, streamed music."}
+        ],
+        "colleges": ["Berklee Online", "Self-taught via YouTube/Udemy"],
+        "cost": "₹0-5 Lakh",
+        "salary": {"entry": "₹0-2 LPA", "mid": "₹3-10 LPA", "senior": "₹10-50 LPA", "top": "₹50L-1 Cr", "source": "Bollywood music director fees"},
+        "exams": ["No formal exams"],
+        "pros": ["Creative freedom", "Passive income through royalties", "Film music prestige", "Global reach via streaming"],
+        "cons": ["Difficult to get film commissions", "Artist mood dependency", "Market saturation", "Streaming royalties very low"],
+        "abroad": {"level": "High", "desc": "International music production. Streaming platforms global."},
+        "familyAngle": "\"Music director hai?\" = creative career, lower status than engineer/doctor.",
+        "eligibility": "Musical talent, production software skills, creativity.",
+        "educationLevels": ["after10"],
+        "prerequisites": {"minEducation": "class10", "streams": ["Any"], "notes": "Needs: Music background"}
+      },
+      {
+        "id": "copywriter",
+        "name": "Copywriter / Content Writer",
+        "icon": "✍️",
+        "color": "#1565C0",
+        "route": "Any Degree → Content Writing / Copywriting → Agency / In-house / Freelance",
+        "timeline": "2-3 years",
+        "difficulty": "Medium",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. Writing samples matter."
+        },
+        "steps": [
+          {"year": "1-2", "title": "Learn Copywriting", "desc": "Persuasion psychology, SEO writing, email marketing, brand voice."},
+          {"year": "1-2", "title": "Build Portfolio", "desc": "Blog posts, website copy, sales pages, social media copy."},
+          {"year": "2-3", "title": "Career", "desc": "Agency copywriter, in-house writer, freelance on Upwork/Fiverr, personal brand."}
+        ],
+        "colleges": ["No specific college. Online courses: Copyblogger, ConvertKit"],
+        "cost": "₹0-3 Lakh",
+        "salary": {"entry": "₹3-6 LPA", "mid": "₹10-25 LPA", "senior": "₹25-60 LPA", "top": "₹60L-1 Cr", "source": "Content agency data"},
+        "exams": ["No formal exams. Writing samples = portfolio"],
+        "pros": ["High demand", "Freelancing very profitable (₹2-10K per article)", "Remote work", "Scalable income"],
+        "cons": ["Constant writing deadline pressure", "Writer's block", "Client communication heavy", "Imposter syndrome"],
+        "abroad": {"level": "Very High", "desc": "US/UK companies outsource to Indian writers. Freelance rates higher in $ USD."},
+        "familyAngle": "\"Writer hai?\" = creative career. \"Freelance writer\" = skepticism until income shown.",
+        "eligibility": "Excellent writing, marketing understanding, SEO knowledge.",
+        "educationLevels": ["after12", "afterGraduation"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Any"], "notes": "Needs: English proficiency"}
+      }
+    ]
+  },
+  "sports": {
+    "id": "sports",
+    "name": "Sports, Fitness & Wellness",
+    "icon": "⚽",
+    "color": "#FBC02D",
+    "tagline": "Athletics, fitness, and human potential",
+    "description": "For students who love sports and helping others stay fit.",
+    "preview": [
+      "Sports Coach",
+      "Fitness Trainer",
+      "Professional Athlete",
+      "Sports Manager"
+    ],
+    "paths": [
+      {
+        "id": "professional-athlete",
+        "name": "Professional Athlete",
+        "icon": "🏅",
+        "color": "#FF6F00",
+        "route": "School Sports → College / Academy → National Team",
+        "timeline": "15-20 years",
+        "difficulty": "Unpredictable",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. Performance metrics are everything."
+        },
+        "steps": [
+          {"year": "6-18", "title": "Talent Identification & Training", "desc": "Coaching academy, talent hunt programs (SAI, state academies)."},
+          {"year": "18-25", "title": "National Competition", "desc": "Nationals, state championships, Asian games, Olympics."},
+          {"year": "25+", "title": "Professional Career", "desc": "IPL/International team, sponsorships, endorsements."}
+        ],
+        "colleges": ["SAI National Institutes", "Sports Academies", "University sports programs"],
+        "cost": "₹0-10 Lakh (government sponsorship often available)",
+        "salary": {"entry": "₹0-2 LPA (state player)", "mid": "₹5-20 LPA (national player)", "senior": "₹20-100 LPA", "top": "₹1-50+ Cr", "source": "IPL/International player contracts"},
+        "exams": ["Athletic performance tests"],
+        "pros": ["National pride", "Sponsorships massive (Virat Kohli ₹1000+ Cr)", "Global fame", "Legacy building"],
+        "cons": ["Only 0.01% make professional", "Career short (15-20 year peak)", "Injury risk", "Post-retirement income uncertainty"],
+        "abroad": {"level": "Very High", "desc": "International teams, sponsorships, commentator roles post-retirement."},
+        "familyAngle": "\"Cricketer ban gaya\" / \"Footballer ban gaya\" = national hero status. Ultimate prestige.",
+        "eligibility": "Exceptional athletic talent, discipline, mental toughness.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Any"], "notes": "Needs: Exceptional talent + coaching"}
+      },
+      {
+        "id": "fitness-trainer",
+        "name": "Fitness Trainer / Personal Trainer",
+        "icon": "💪",
+        "color": "#4CAF50",
+        "route": "12th → Fitness Certification → Gym / Personal Training",
+        "timeline": "2-3 years",
+        "difficulty": "Low-Medium",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant."
+        },
+        "steps": [
+          {"year": "1-2", "title": "Fitness Certification", "desc": "ACE, NASM, ISSA certifications. Exercise physiology, nutrition basics."},
+          {"year": "2-3", "title": "Gym Employment / Personal Training", "desc": "Gold's Gym, Cult Fit, Fittr. Personal clients at ₹2-10K/month."}
+        ],
+        "colleges": ["ACE Academy India", "ISSA", "Online certifications"],
+        "cost": "₹30K-2 Lakh",
+        "salary": {"entry": "₹2-5 LPA (gym trainer)", "mid": "₹6-15 LPA (busy personal trainer)", "senior": "₹15-40 LPA", "top": "₹40L-1 Cr", "source": "Fitness industry data"},
+        "exams": ["ACE, NASM, ISSCA certifications"],
+        "pros": ["Fitness boom in India", "Personal training very lucrative", "Help people achieve goals", "Flexible work"],
+        "cons": ["Physical demanding", "Client consistency issues", "Overuse injuries on trainers", "Competitive market"],
+        "abroad": {"level": "Medium-High", "desc": "Fitness industry global. US trainers earn $50-100K+."},
+        "familyAngle": "\"Trainer ban gaya\" = decent career. \"Successful personal trainer\" = good income."},
+        "eligibility": "Fitness passion, motivational skills, body knowledge.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Any"], "notes": "Needs: Fitness certification"}
+      },
+      {
+        "id": "sports-coach",
+        "name": "Sports Coach",
+        "icon": "🏆",
+        "color": "#E53935",
+        "route": "BTech/BA → Sports Coaching Certification → Academy / School",
+        "timeline": "3-4 years",
+        "difficulty": "Medium",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant."
+        },
+        "steps": [
+          {"year": "1-3", "title": "Sports Science / Education", "desc": "Learn sports physiology, coaching methodology, athlete psychology."},
+          {"year": "2-4", "title": "Coaching Certification", "desc": "National coaching credentials, SAI coach programs."},
+          {"year": "4+", "title": "Coaching Career", "desc": "School coach, academy coach, national team coach."}
+        ],
+        "colleges": ["NSNIS Bangalore", "LNCPE Chennai", "Sports Authority of India"],
+        "cost": "₹2-8 Lakh",
+        "salary": {"entry": "₹2.5-5 LPA", "mid": "₹6-15 LPA", "senior": "₹15-40 LPA", "top": "₹30-80 LPA", "source": "Coaching salary data"},
+        "exams": ["National coach certification", "SAI exams"],
+        "pros": ["Help athletes reach potential", "Government coaching stable", "Sports passion career"],
+        "cons": ["Lower pay initially", "Emotional investment in athletes", "Success depends on athlete talent"],
+        "abroad": {"level": "Medium", "desc": "International coaching opportunities. Australia, Europe hire Indian coaches."},
+        "familyAngle": "\"Coach ban gaya\" = respected. National team coach = pride.",
+        "eligibility": "Sports expertise, coaching certification, athlete understanding.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Any"], "notes": "Needs: Sports background + certification"}
+      }
+    ]
+  },
+  "emerging": {
+    "id": "emerging",
+    "name": "Emerging & Future Tech Careers",
+    "icon": "🚀",
+    "color": "#00BCD4",
+    "tagline": "The future of work",
+    "description": "For students who want to work on cutting-edge technology and innovation.",
+    "preview": [
+      "Blockchain Developer",
+      "AI Researcher",
+      "Drone Operator",
+      "Sustainability Consultant"
+    ],
+    "paths": [
+      {
+        "id": "blockchain-developer",
+        "name": "Blockchain Developer",
+        "icon": "⛓️",
+        "color": "#F57C00",
+        "route": "BTech CS → Web3 Skills → Crypto/Web3 Company",
+        "timeline": "3-4 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant. Coding skills + blockchain knowledge = salary."
+        },
+        "steps": [
+          {"year": "1-2", "title": "Core Programming", "desc": "Python, JavaScript, Solidity. Smart contract development on Ethereum."},
+          {"year": "2-3", "title": "Blockchain Specialization", "desc": "DeFi, NFTs, Layer 2 solutions. Build projects on GitHub."},
+          {"year": "3-4", "title": "Web3 Company", "desc": "Polygon, Aave, OpenSea, Indian startups (Polygon India, Dune)"}
+        ],
+        "colleges": ["No specific college. Self-taught essential."],
+        "cost": "₹0-3 Lakh",
+        "salary": {"entry": "₹10-20 LPA", "mid": "₹25-60 LPA", "senior": "₹70-200 LPA", "top": "₹1-5 Cr", "source": "Web3 startup salary data"},
+        "exams": ["No formal exams"],
+        "pros": ["Crypto boom", "High salary", "Global remote work", "Stock options potential"],
+        "cons": ["Crypto volatility risk", "Regulatory uncertainty", "Job market cyclical", "\"Scam\" association"],
+        "abroad": {"level": "Very High", "desc": "Web3 fully remote. Singapore, Dubai, US based companies. USD salaries."},
+        "familyAngle": "\"Blockchain mein kaam karta hai?\" = family confusion initially. Salary proof = acceptance.",
+        "eligibility": "Strong programming, blockchain understanding, financial knowledge.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCM"], "notes": "Needs: BTech CS"}
+      },
+      {
+        "id": "ai-researcher",
+        "name": "AI Researcher / Ph.D. Researcher",
+        "icon": "🔬",
+        "color": "#7B1FA2",
+        "route": "BTech CS → MS/PhD AI → Research Institute / Tech Company",
+        "timeline": "5-8 years",
+        "difficulty": "Very High",
+        "boardMarks": {
+          "tenth": "Matters",
+          "twelfth": "Matters",
+          "description": "Board marks matter for top college admissions. PhD research output is everything."
+        },
+        "steps": [
+          {"year": "1-4", "title": "BTech CS", "desc": "Strong in ML, linear algebra, programming."},
+          {"year": "4-6", "title": "MS or PhD", "desc": "Top university: CMU, Stanford, MIT, or domestic: IISc, IIIT Hyderabad."},
+          {"year": "6-8", "title": "Research Career", "desc": "DeepMind, OpenAI, Meta AI, Google Brain, Tesla AI, ISRO."}
+        ],
+        "colleges": ["IISc Bangalore", "IIIT Hyderabad", "IIT-D (top CS Ph.D. programs)"],
+        "cost": "₹2-50 Lakh (India), full scholarship (abroad for PhD)",
+        "salary": {"entry": "₹15-30 LPA (researcher)", "mid": "₹35-80 LPA", "senior": "₹1-3 Cr", "top": "₹5-10 Cr", "source": "DeepMind/OpenAI researcher compensation"},
+        "exams": ["PhD entrance", "Research publications"],
+        "pros": ["Publish papers at top venues", "Global recognition", "Shape AI field", "Unlimited earning at top companies"],
+        "cons": ["PhD is 5+ years of low stipend", "Publish or perish pressure", "Very competitive space", "Niche job market"],
+        "abroad": {"level": "Very High", "desc": "PhD abroad fully funded. Faculty positions in top universities. Silicon Valley researcher roles."},
+        "familyAngle": "\"AI research karta hai\" = ultimate intellectual prestige. Family boasts to relatives."},
+        "eligibility": "PhD-level understanding of ML/AI, research publication ability.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science-PCM"], "notes": "Needs: BTech CS + PhD"}
+      },
+      {
+        "id": "drone-operator",
+        "name": "Drone Operator / Drone Pilot",
+        "icon": "🛸",
+        "color": "#00695C",
+        "route": "12th → Drone Certification → Commercial Drone Operations",
+        "timeline": "1-2 years",
+        "difficulty": "Low-Medium",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks irrelevant."
+        },
+        "steps": [
+          {"year": "1", "title": "Drone Certification", "desc": "DGCA Remote Pilot License. Theory + practical exams."},
+          {"year": "1-2", "title": "Commercial Drone Work", "desc": "Photography, surveying, agriculture, real estate, film production."}
+        ],
+        "colleges": ["DGCA approved training centers", "Online drone courses"],
+        "cost": "₹50K-3 Lakh",
+        "salary": {"entry": "₹2-4 LPA", "mid": "₹6-15 LPA", "senior": "₹15-35 LPA", "top": "₹35-70 LPA", "source": "Drone services data"},
+        "exams": ["DGCA Remote Pilot exam"],
+        "pros": ["Rapidly growing field", "Low barriers to entry", "Diverse applications", "Own drone business potential"],
+        "cons": ["Highly regulated (DGCA strict)", "Weather dependent work", "License renewal required", "Equipment expensive"],
+        "abroad": {"level": "Medium", "desc": "Drone operations global. US drone operators earn $50-100K+."},
+        "familyAngle": "\"Drone operate karta hai?\" = modern, cool job perception.",
+        "eligibility": "DGCA license, technical aptitude, patience for regulations.",
+        "educationLevels": ["after10"],
+        "prerequisites": {"minEducation": "class10", "streams": ["Any"], "notes": "Needs: DGCA certification"}
+      },
+      {
+        "id": "sustainability-consultant",
+        "name": "Sustainability / ESG Consultant",
+        "icon": "🌱",
+        "color": "#2E7D32",
+        "route": "BTech / BBA → MBA Sustainability / ESG → Consulting Firm",
+        "timeline": "4-6 years",
+        "difficulty": "Medium-High",
+        "boardMarks": {
+          "tenth": "Neutral",
+          "twelfth": "Neutral",
+          "description": "Board marks don't matter directly."
+        },
+        "steps": [
+          {"year": "1-4", "title": "Bachelor's Degree", "desc": "Engineering or Business with sustainability focus."},
+          {"year": "4-6", "title": "MBA / Masters Sustainability", "desc": "Certification in ESG, Carbon accounting, climate strategy."},
+          {"year": "6+", "title": "Consulting", "desc": "McKinsey Sustainability, Deloitte ESG, corporate ESG head."}
+        ],
+        "colleges": ["IIM Calcutta (ESG focus)", "Top MBA programs"],
+        "cost": "₹5-30 Lakh",
+        "salary": {"entry": "₹7-15 LPA", "mid": "₹20-45 LPA", "senior": "₹50-100 LPA", "top": "₹1-2 Cr", "source": "Consulting salary data"},
+        "exams": ["MBA entrance"],
+        "pros": ["CSR boom in India", "Corporate ESG mandatory (SEBI)", "Global sustainability trend", "Meaningful work"],
+        "cons": ["Niche market", "Corporate greenwashing issues", "Regulatory complexity", "Measurement challenges"],
+        "abroad": {"level": "High", "desc": "EU/US ESG regulations driving demand. Consulting roles global."},
+        "familyAngle": "\"Sustainability consultant\" = impact-driven, modern career.",
+        "eligibility": "Sustainability knowledge, consulting skills, environmental passion.",
+        "educationLevels": ["after12"],
+        "prerequisites": {"minEducation": "class12", "streams": ["Science/Commerce"], "notes": "Needs: Bachelor's + sustainability focus"}
       }
     ]
   }

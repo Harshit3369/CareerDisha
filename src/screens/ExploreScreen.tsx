@@ -1,4 +1,4 @@
-import { Brain, ClipboardList, Map, Bot, BookOpen, PenTool, LayoutGrid, Sparkles, RefreshCcw } from 'lucide-react';
+import { Brain, ClipboardList, Map, Bot, BookOpen, PenTool, LayoutGrid, Sparkles, RefreshCcw, Compass, Scale } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 
@@ -14,6 +14,16 @@ const EXPLORE_ITEMS = [
     iconColor: 'text-light'
   },
   {
+    path: '/my-story',
+    title: 'My Path Map',
+    desc: 'Choose & commit to your journey',
+    icon: Compass,
+    bg: 'bg-gradient-to-br from-emerald-500 to-teal-600',
+    text: 'text-light',
+    iconBg: 'bg-light/20',
+    iconColor: 'text-light'
+  },
+  {
     path: '/career-roadmap',
     title: 'AI Custom Roadmap',
     desc: 'Generate a personalized guide',
@@ -25,8 +35,8 @@ const EXPLORE_ITEMS = [
   },
   {
     path: '/pivot',
-    title: 'Pivot GPT',
-    desc: 'Find alternative career tracks',
+    title: 'College Suggestor',
+    desc: 'Find the best fit colleges',
     icon: RefreshCcw,
     bg: 'bg-gradient-to-br from-indigo-500 to-purple-600',
     text: 'text-light',
@@ -73,6 +83,17 @@ const EXPLORE_ITEMS = [
     iconBg: 'bg-dark/10',
     iconColor: 'text-dark/60',
     border: 'border border-dark/5'
+  },
+  {
+    path: '/dream-cost',
+    title: 'Cost of The Dream',
+    desc: 'The honest weight of your ambition',
+    icon: Scale,
+    bg: 'bg-gradient-to-br from-gray-950 to-zinc-900',
+    text: 'text-light',
+    iconBg: 'bg-amber-500/20',
+    iconColor: 'text-amber-400',
+    border: 'border border-amber-500/20'
   }
 ];
 

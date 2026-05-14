@@ -58,7 +58,7 @@ export default function LoginScreen() {
                 transition={{ delay: 0.4 }}
                 className="text-5xl font-black text-dark mb-4 tracking-tighter"
               >
-                Career <span className="text-primary">Suggestor</span>
+                Career<span className="text-primary">Disha+</span>
               </motion.h1>
               
               <motion.p

@@ -2,13 +2,14 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Bot, ArrowLeft, ArrowUp, Sparkles, Paperclip } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { GoogleGenAI, Type } from '@google/genai';
-import { collection, addDoc, serverTimestamp, doc, updateDoc, setDoc, getDocs, orderBy, query as firestoreQuery, limit, increment } from 'firebase/firestore';
+
+import { collection, addDoc, serverTimestamp, doc, updateDoc, setDoc, getDocs, orderBy, query as firestoreQuery, limit, increment, where } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import { handleFirestoreError, OperationType } from '../lib/firestoreUtils';
 import ReactMarkdown from 'react-markdown';
 import { cn } from '../lib/utils';
 import { useAuth } from '../contexts/AuthContext';
+import { API_BASE } from '../lib/apiConfig';
 
 const AIThinkingText = () => {
   const [index, setIndex] = useState(0);
@@ -114,8 +115,76 @@ export default function AdvisorScreen() {
 
   useEffect(() => {
     const initializeChat = async () => {
+      if (hasProcessedInitialQuery.current) return;
+      
+      let historyLoaded = false;
+      if (user) {
+        try {
+          // Query chatSessions for this user
+          const q = firestoreQuery(collection(db, 'chatSessions'), where('userId', '==', user.uid), orderBy('updatedAt', 'desc'), limit(1));
+          const snapshot = await getDocs(q);
+          if (!snapshot.empty) {
+            const latestSession = snapshot.docs[0];
+            setChatId(latestSession.id);
+            const msgsQuery = firestoreQuery(collection(db, 'chatSessions', latestSession.id, 'messages'), orderBy('createdAt', 'asc'));
+            const msgsSnap = await getDocs(msgsQuery);
+            if (!msgsSnap.empty) {
+              const loadedMsgs = msgsSnap.docs.map(doc => {
+                const data = doc.data();
+                return {
+                  id: doc.id,
+                  text: data.text || '',
+                  sender: data.sender as 'user' | 'ai',
+                  followUps: data.followUps || []
+                };
+              });
+              setMessages(loadedMsgs);
+              historyLoaded = true;
+              
+              const lastAiMsg = [...loadedMsgs].reverse().find(m => m.sender === 'ai' && m.followUps && m.followUps.length > 0);
+              if (lastAiMsg && lastAiMsg.followUps) {
+                setDynamicSuggestions(lastAiMsg.followUps);
+              }
+            }
+          }
+        } catch (err) {
+          console.error("Failed to load chat history:", err);
+          // Fallback if index is still building
+          try {
+            const allSnap = await getDocs(collection(db, 'chatSessions'));
+            const userDocs = allSnap.docs.filter(d => d.data().userId === user.uid);
+            if (userDocs.length > 0) {
+              userDocs.sort((a, b) => (b.data().updatedAt?.toMillis?.() || 0) - (a.data().updatedAt?.toMillis?.() || 0));
+              const latestSession = userDocs[0];
+              setChatId(latestSession.id);
+              const msgsQuery = firestoreQuery(collection(db, 'chatSessions', latestSession.id, 'messages'), orderBy('createdAt', 'asc'));
+              const msgsSnap = await getDocs(msgsQuery);
+              if (!msgsSnap.empty) {
+                const loadedMsgs = msgsSnap.docs.map(doc => {
+                  const data = doc.data();
+                  return {
+                    id: doc.id,
+                    text: data.text || '',
+                    sender: data.sender as 'user' | 'ai',
+                    followUps: data.followUps || []
+                  };
+                });
+                setMessages(loadedMsgs);
+                historyLoaded = true;
+                const lastAiMsg = [...loadedMsgs].reverse().find(m => m.sender === 'ai' && m.followUps && m.followUps.length > 0);
+                if (lastAiMsg && lastAiMsg.followUps) {
+                  setDynamicSuggestions(lastAiMsg.followUps);
+                }
+              }
+            }
+          } catch (fallbackErr) {
+            console.error("Fallback load failed:", fallbackErr);
+          }
+        }
+      }
+
       let isFirstGreetingAdded = false;
-      if (messages.length === 0) {
+      if (!historyLoaded && messages.length === 0) {
         setMessages([
           {
             id: 'initial',
@@ -131,14 +200,13 @@ export default function AdvisorScreen() {
         const initialQuery = location.state.initialQuery;
         navigate(location.pathname, { replace: true, state: {} });
         
-        // Let React update the messages with the greeting first before adding the user query
         setTimeout(async () => {
           await processMessage(initialQuery);
         }, isFirstGreetingAdded ? 100 : 0);
       }
     };
     initializeChat();
-  }, [firstName, location.state?.initialQuery, navigate]);
+  }, [firstName, location.state?.initialQuery, navigate, user]);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -204,7 +272,7 @@ export default function AdvisorScreen() {
       let followUps: string[] = ["Tell me about Data Science", "What about AI?"];
       
       try {
-        const response = await fetch('/api/generate-content', {
+        const response = await fetch(`${API_BASE}/api/generate-content`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -332,7 +400,23 @@ export default function AdvisorScreen() {
           </div>
           <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Advisor</span>
         </div>
-        <div className="w-10" /> {/* Spacer for flex centering */}
+        <button 
+          onClick={() => {
+            setChatId(null);
+            setMessages([
+              {
+                id: 'initial',
+                sender: 'ai',
+                text: `Hi ${firstName}! I'm your Disha AI. How can I help with your career and academic guidance today? 🌟`
+              }
+            ]);
+          }}
+          title="Start New Chat"
+          className="px-3 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary font-bold text-xs rounded-full transition-colors flex items-center gap-1 cursor-pointer active:scale-95"
+        >
+          <Sparkles size={12} />
+          <span>New</span>
+        </button>
       </header>
 
       {/* Chat Area */}

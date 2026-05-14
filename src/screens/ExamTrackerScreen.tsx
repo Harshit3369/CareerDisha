@@ -6,6 +6,7 @@ import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import { cn } from '../lib/utils';
 import { handleFirestoreError, OperationType } from '../utils/firestoreErrorHandler';
+import { API_BASE } from '../lib/apiConfig';
 
 export default function ExamTrackerScreen() {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export default function ExamTrackerScreen() {
     setErrorMsg(null);
     
     // Simple caching mechanism
-    const docRef = user ? doc(db, `users/${user.uid}/examTracker`, 'current') : null;
+    const docRef = user ? doc(db, `users/${user.uid}/examTracker_v2`, 'current') : null;
 
     try {
       if (!forceRegenerate && docRef) {
@@ -40,7 +41,7 @@ export default function ExamTrackerScreen() {
         }
       }
 
-      const response = await fetch('/api/exam-tracker', {
+      const response = await fetch(`${API_BASE}/api/exam-tracker`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -54,6 +55,7 @@ export default function ExamTrackerScreen() {
           gender: 'Male', // Default
           score12OrCurrent: userProfile?.score12OrCurrent || null,
           interestedCareers: userProfile?.interests || [],
+          isPremium: userProfile?.isPremium || false
         })
       });
 
@@ -61,8 +63,18 @@ export default function ExamTrackerScreen() {
         const errData = await response.json().catch(() => ({}));
         
         let errorToThrow = errData.error || 'Failed to generate exam tracker data';
-        if (errorToThrow.includes('API key not valid') || errorToThrow.includes('API_KEY_INVALID')) {
-           errorToThrow = "Your Gemini API key is missing or invalid. Please check the Secrets menu in AI Studio Settings to configure a valid API key.";
+        
+        if (typeof errorToThrow === 'object') {
+          errorToThrow = errorToThrow.message || JSON.stringify(errorToThrow);
+        } else if (typeof errorToThrow === 'string' && errorToThrow.includes('{')) {
+          try {
+             const parsed = JSON.parse(errorToThrow.substring(errorToThrow.indexOf('{')));
+             if (parsed.error && parsed.error.message) errorToThrow = parsed.error.message;
+          } catch(e) {}
+        }
+
+        if (errorToThrow.includes('API key not valid') || errorToThrow.includes('API_KEY_INVALID') || errorToThrow.includes('leaked') || errorToThrow.includes('not configured')) {
+           errorToThrow = "Your Gemini API key is missing, invalid, or leaked. Please configure a valid API key in your environment variables.";
         } else if (errorToThrow.includes('quota') || errorToThrow.includes('429')) {
            errorToThrow = "API quota exceeded. Please try again later or check your billing plan.";
         } else if (errorToThrow.includes('503') || errorToThrow.includes('high demand') || errorToThrow.includes('UNAVAILABLE')) {
@@ -81,7 +93,7 @@ export default function ExamTrackerScreen() {
             generatedAt: serverTimestamp()
           });
         } catch (e) {
-          handleFirestoreError(e, OperationType.WRITE, `users/${user?.uid}/examTracker/current`);
+          handleFirestoreError(e, OperationType.WRITE, `users/${user?.uid}/examTracker_v2/current`);
         }
       }
 
@@ -159,94 +171,20 @@ export default function ExamTrackerScreen() {
               </div>
             </div>
 
-            {/* Personalized Insights (Smart Insights replacement) */}
-            {data.personalizedInsights && data.personalizedInsights.length > 0 && (
-              <section className="space-y-3 pt-2">
-                <h2 className="text-lg font-bold text-dark flex items-center gap-2">
-                  <Sparkles size={18} className="text-secondary" /> AI Insights
-                </h2>
-                <div className="flex gap-3 overflow-x-auto no-scrollbar pb-2 snap-x">
-                  {data.personalizedInsights.map((insight: any, idx: number) => (
-                    <div key={idx} className="min-w-[280px] snap-center bg-white border border-dark/5 shadow-sm p-4 rounded-2xl">
-                      <h3 className="font-bold text-secondary mb-1 text-sm">{insight.title}</h3>
-                      <p className="text-sm text-dark/80 leading-relaxed mb-3">{insight.message}</p>
-                      {insight.actionable && (
-                        <div className="bg-primary/5 text-primary text-xs font-bold p-2 rounded-lg inline-block">
-                          Action: {insight.actionable}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Urgent Actions */}
-            {data.urgentActions && data.urgentActions.length > 0 && (
-              <section className="space-y-3 pt-2">
-                <div className="flex items-center gap-2">
-                  <ShieldAlert size={18} className="text-red-500" />
-                  <h2 className="text-lg font-bold text-dark">Urgent Deadlines</h2>
-                </div>
-                <div className="space-y-3">
-                  {data.urgentActions.map((action: any, idx: number) => (
-                    <div key={idx} className="bg-red-50 border border-red-100 p-4 rounded-2xl relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-red-500/10 rounded-bl-full" />
-                      <h3 className="font-bold text-red-700 leading-tight mb-1">{action.examName}</h3>
-                      <div className="text-xs font-black bg-red-100 text-red-600 px-2 py-0.5 rounded uppercase inline-block mb-2">
-                        {action.daysLeft} Days Left
-                      </div>
-                      <p className="text-xs text-red-800/80 mb-3">{action.urgentMessage}</p>
-                      <a href={action.applicationLink?.startsWith('http') ? action.applicationLink : `https://${action.applicationLink}`} target="_blank" rel="noreferrer" className="text-sm bg-red-600 text-white font-bold py-1.5 px-4 rounded-lg inline-block text-center shadow-sm">
-                        Apply Now
-                      </a>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Surprise Opportunities */}
-            {data.crossStreamOpportunities && data.crossStreamOpportunities.length > 0 && (
-              <section className="space-y-3 pt-4">
-                <div className="bg-orange-50 border border-orange-200 rounded-2xl p-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Target size={20} className="text-orange-500" />
-                    <h2 className="text-lg font-bold text-orange-800">Surprise Opportunities</h2>
-                  </div>
-                  <p className="text-xs font-medium text-orange-700 mb-4">
-                    Most students in your stream miss these. You are eligible and should consider them!
+            {/* Upgrade Banner for Non-Premium */}
+            {!userProfile?.isPremium && (
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 p-4 rounded-2xl flex items-start gap-3 shadow-sm mt-4">
+                <ShieldAlert size={24} className="text-orange-500 shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="font-bold text-dark text-sm">Free Tier Limit Reached</h3>
+                  <p className="text-xs text-dark/70 mt-1 mb-2">
+                    You are currently tracking a maximum of 5 exams. Upgrade to Anti Gravity+ (CareerDisha+) to track unlimited exams and never miss a deadline.
                   </p>
-                  
-                  <div className="space-y-4">
-                    {data.crossStreamOpportunities.map((exam: any, idx: number) => (
-                      <div key={idx} className="bg-white rounded-xl p-4 shadow-sm border border-orange-100">
-                        <div className="flex items-start justify-between mb-2">
-                          <h3 className="font-bold text-dark leading-tight">{exam.name}</h3>
-                          {exam.countdown?.applicationStatus === 'URGENT' && (
-                            <span className="text-[10px] bg-orange-100 text-orange-700 font-bold px-2 py-0.5 rounded">
-                              Ends Soon
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-xs text-dark/70 mb-3 bg-dark/5 p-2 rounded-lg italic border-l-2 border-orange-300">
-                          "{exam.surpriseMessage}"
-                        </p>
-                        <div className="grid grid-cols-2 gap-2 text-xs">
-                          <div>
-                            <span className="opacity-60 block">Exam Date:</span>
-                            <span className="font-semibold">{exam.dates?.examDate}</span>
-                          </div>
-                          <div>
-                            <span className="opacity-60 block">Fee:</span>
-                            <span className="font-semibold">{exam.fees?.studentFee}</span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  <button className="text-xs font-bold bg-orange-100 text-orange-700 px-3 py-1.5 rounded-lg hover:bg-orange-200 transition-colors">
+                    Upgrade Now
+                  </button>
                 </div>
-              </section>
+              </div>
             )}
 
             {/* Primary Exams */}
@@ -296,57 +234,6 @@ export default function ExamTrackerScreen() {
                         <a href={exam.officialWebsite?.startsWith('http') ? exam.officialWebsite : `https://${exam.officialWebsite}`} target="_blank" rel="noreferrer" className="text-primary font-bold hover:underline py-1 px-2 bg-primary/10 rounded">
                           Official Site
                         </a>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Category Advantages */}
-            {data.categoryAdvantages && data.categoryAdvantages.category && (
-              <section className="space-y-3 pt-4">
-                <h2 className="text-lg font-bold text-dark flex items-center gap-2">
-                  <Sparkles size={18} className="text-purple-600" /> {data.categoryAdvantages.category} Advantages
-                </h2>
-                <div className="bg-purple-50 border border-purple-200 rounded-2xl p-4 shadow-sm">
-                  <ul className="list-disc list-inside space-y-1 mb-2 text-sm text-purple-800 font-medium">
-                    {data.categoryAdvantages.advantages?.map((adv: string, i: number) => (
-                      <li key={i}>{adv}</li>
-                    ))}
-                  </ul>
-                  {data.categoryAdvantages.importantNote && (
-                    <div className="text-xs text-purple-700/80 italic mt-2 p-2 bg-purple-100 rounded-lg">
-                      {data.categoryAdvantages.importantNote}
-                    </div>
-                  )}
-                </div>
-              </section>
-            )}
-
-            {/* State Specific Exams */}
-            {data.stateSpecificExams && data.stateSpecificExams.length > 0 && (
-              <section className="space-y-3 pt-4">
-                <h2 className="text-lg font-bold text-dark">State Quota Advantage</h2>
-                <div className="space-y-3">
-                  {data.stateSpecificExams.map((exam: any, idx: number) => (
-                    <div key={idx} className="bg-white border border-dark/5 rounded-2xl p-4 shadow-sm border-l-4 border-l-primary">
-                      <div className="flex justify-between items-start mb-1">
-                        <h3 className="font-bold text-dark leading-tight">{exam.name}</h3>
-                        <span className="text-[10px] uppercase bg-dark/5 rounded font-bold px-1.5 py-0.5 tracking-wide">
-                          {exam.importance || 'HIGH'}
-                        </span>
-                      </div>
-                      <div className="text-xs font-medium text-dark/70 mb-3">{exam.stateAdvantage}</div>
-                      <div className="text-[11px] flex gap-4 text-dark/60">
-                        <div>
-                          <span className="font-bold block">App Deadline</span>
-                          {exam.dates?.applicationCloseDate}
-                        </div>
-                        <div>
-                          <span className="font-bold block">Exam Date</span>
-                          {exam.dates?.examDate}
-                        </div>
                       </div>
                     </div>
                   ))}

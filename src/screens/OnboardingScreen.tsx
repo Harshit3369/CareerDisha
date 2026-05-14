@@ -510,7 +510,7 @@ export default function OnboardingScreen() {
 
                 <div className="space-y-4">
                   <h2 className="text-4xl font-black">All Set, {profileData.name.split(' ')[0]}!</h2>
-                  <p className="text-dark/60 text-lg">Your personalized Career Suggestor experience is ready!</p>
+                  <p className="text-dark/60 text-lg">Your personalized CareerDisha+ experience is ready!</p>
                 </div>
 
                 {/* Summary Card */}

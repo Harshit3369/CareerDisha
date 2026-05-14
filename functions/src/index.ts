@@ -1,29 +1,25 @@
-import dotenv from "dotenv";
-dotenv.config({ override: true });
+import { onRequest } from "firebase-functions/v2/https";
 import express from "express";
-import { createServer as createViteServer } from "vite";
+import cors from "cors";
 import { GoogleGenAI, Type } from "@google/genai";
-import path from "path";
+import * as dotenv from 'dotenv';
+dotenv.config();
 
-async function startServer() {
-  const app = express();
-  const PORT = 3000;
-
-  app.use(express.json());
-
-  // Generic content generation for the frontend
+const app = express();
+app.use(cors({ origin: true }));
+app.use(express.json());
   app.post("/api/generate-content", async (req, res) => {
     try {
       const { prompt, schema, systemInstruction, context } = req.body;
-      let apiKey = process.env.GEMINI_API_KEY;
+      let apiKey = process.env.GEMINI_API_KEY || process.env.REACT_APP_GEMINI_API_KEY;
       if (!apiKey || apiKey === 'MY_GEMINI_API_KEY') {
-        apiKey = "AIzaSyDfA0el01esmttQ3uijph_FPR8vCvkizV4";
+        return res.status(500).json({ error: "Gemini API Key is not configured." });
       }
 
       const ai = new GoogleGenAI({ apiKey });
       
       const config: any = {
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.0-flash",
         contents: prompt
       };
       
@@ -47,7 +43,11 @@ async function startServer() {
       }
     } catch (error: any) {
       console.error("Error in /api/generate-content:", error);
-      res.status(500).json({ error: error?.message || "Failed to generate content." });
+      let errMsg = error?.message || "Failed to generate content.";
+      if (errMsg.includes('leaked') || errMsg.includes('API_KEY_INVALID')) {
+        errMsg = "Your Gemini API key is missing, invalid, or leaked. Please configure a valid API key in your environment variables.";
+      }
+      res.status(500).json({ error: errMsg });
     }
   });
 
@@ -69,9 +69,9 @@ async function startServer() {
         return res.status(400).json({ error: "courseChosen is required" });
       }
       
-      let apiKey = process.env.GEMINI_API_KEY;
+      let apiKey = process.env.GEMINI_API_KEY || process.env.REACT_APP_GEMINI_API_KEY;
       if (!apiKey || apiKey === 'MY_GEMINI_API_KEY') {
-        apiKey = "AIzaSyDfA0el01esmttQ3uijph_FPR8vCvkizV4";
+        return res.status(500).json({ error: "Gemini API Key is not configured." });
       }
 
       const ai = new GoogleGenAI({ apiKey });
@@ -108,7 +108,7 @@ IMPORTANT CONSTRAINTS:
 `;
 
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.0-flash",
         contents: prompt,
         config: {
           responseMimeType: "application/json",
@@ -169,7 +169,11 @@ IMPORTANT CONSTRAINTS:
 
     } catch (error: any) {
       console.error("Error generating recommendations:", error);
-      res.status(500).json({ error: error?.message || "Failed to generate college recommendations." });
+      let errMsg = error?.message || "Failed to generate college recommendations.";
+      if (errMsg.includes('leaked') || errMsg.includes('API_KEY_INVALID')) {
+        errMsg = "Your Gemini API key is missing, invalid, or leaked. Please configure a valid API key in your environment variables.";
+      }
+      res.status(500).json({ error: errMsg });
     }
   });
 
@@ -192,9 +196,9 @@ IMPORTANT CONSTRAINTS:
         isPhysicallyFit
       } = req.body;
 
-      let apiKey = process.env.GEMINI_API_KEY;
+      let apiKey = process.env.GEMINI_API_KEY || process.env.REACT_APP_GEMINI_API_KEY;
       if (!apiKey || apiKey === 'MY_GEMINI_API_KEY') {
-        apiKey = "AIzaSyDfA0el01esmttQ3uijph_FPR8vCvkizV4";
+        return res.status(500).json({ error: "Gemini API Key is not configured." });
       }
 
       const ai = new GoogleGenAI({ apiKey });
@@ -603,7 +607,7 @@ Surprise opportunity you might not know about: [Cross-stream exam]
 - NEVER return the same exam list regardless of who is asking`;
 
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.0-flash",
         contents: prompt,
         config: {
           responseMimeType: "application/json",
@@ -862,29 +866,12 @@ Surprise opportunity you might not know about: [Cross-stream exam]
 
     } catch (error: any) {
       console.error("Error generating exam tracker data:", error);
-      res.status(500).json({ error: error?.message || "Failed to generate exam tracker data." });
+      let errMsg = error?.message || "Failed to generate exam tracker data.";
+      if (errMsg.includes('leaked') || errMsg.includes('API_KEY_INVALID')) {
+        errMsg = "Your Gemini API key is missing, invalid, or leaked. Please configure a valid API key in your environment variables.";
+      }
+      res.status(500).json({ error: errMsg });
     }
   });
 
-  // Vite middleware for development
-  if (process.env.NODE_ENV !== "production") {
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: "spa",
-    });
-    app.use(vite.middlewares);
-  } else {
-    // Note: Use cwd correctly to serve dist in production
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
-    });
-  }
-
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-  });
-}
-
-startServer();
+export const api = onRequest({ invoker: "public", cors: true }, app);

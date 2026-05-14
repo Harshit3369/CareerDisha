@@ -49,3 +49,97 @@
     @apply w-full max-w-[390px] mx-auto min-h-screen bg-[var(--color-bg)] relative overflow-x-hidden shadow-2xl shadow-black/50 transition-colors duration-300;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   DESKTOP OPTIMIZATION — Only applies at ≥1024px.
+   Mobile layout (≤1023px) is completely untouched.
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (min-width: 1024px) {
+  /* Expand the app container on desktop */
+  .app-container {
+    max-width: 100% !important;
+    shadow: none !important;
+    box-shadow: none !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Desktop main content area: offset for sidebar, wider layout */
+  .app-container > main {
+    margin-left: 260px;
+    max-width: 900px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 3rem;
+  }
+
+  /* Desktop TopBar: offset for sidebar */
+  .app-container > header {
+    margin-left: 260px;
+    max-width: 900px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  /* Transform bottom nav into a left sidebar on desktop */
+  .desktop-sidebar-nav {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: auto !important;
+    width: 240px !important;
+    max-width: 240px !important;
+    height: 100vh !important;
+    padding: 2rem 1rem !important;
+    margin: 0 !important;
+    z-index: 50;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .desktop-sidebar-nav > nav {
+    flex-direction: column !important;
+    border-radius: 1.5rem !important;
+    padding: 1.5rem 1rem !important;
+    gap: 0.25rem !important;
+    height: auto !important;
+    background: var(--theme-dark) !important;
+  }
+
+  .desktop-sidebar-nav > nav > *,
+  .desktop-sidebar-nav > nav > div {
+    width: 100% !important;
+  }
+
+  .desktop-sidebar-nav > nav a {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    padding: 0.75rem 1rem !important;
+    border-radius: 0.75rem !important;
+    gap: 0.75rem;
+  }
+
+  /* Show labels on desktop sidebar */
+  .desktop-sidebar-nav .nav-label {
+    display: inline !important;
+  }
+
+  /* Nicer scrollbar on desktop */
+  .app-container > main::-webkit-scrollbar {
+    width: 6px;
+    display: block;
+  }
+  .app-container > main::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .app-container > main::-webkit-scrollbar-thumb {
+    background: var(--theme-primary);
+    border-radius: 3px;
+    opacity: 0.5;
+  }
+  .app-container > main {
+    scrollbar-width: thin;
+    scrollbar-color: var(--theme-primary) transparent;
+  }
+}

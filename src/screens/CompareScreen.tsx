@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { GoogleGenAI, Type } from '@google/genai';
 import { cn } from '../lib/utils';
 import { useAuth } from '../contexts/AuthContext';
+import { API_BASE } from '../lib/apiConfig';
 
 interface CollegeData {
   id: string;
@@ -45,7 +46,7 @@ export default function CompareScreen() {
     setIsSearching(true);
     setSearchError(null);
     try {
-      const response = await fetch('/api/generate-content', {
+      const response = await fetch(`${API_BASE}/api/generate-content`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

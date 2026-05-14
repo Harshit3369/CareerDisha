@@ -1,21 +1,24 @@
 import { useState, useEffect, useMemo } from 'react';
-import { ArrowRight, Brain, ClipboardList, Map, Bot, BookOpen, PenTool, Star, Bookmark, Sparkles, AlertCircle, Video, Users } from 'lucide-react';
+import { ArrowRight, Brain, ClipboardList, Map, Bot, BookOpen, PenTool, Star, Bookmark, Sparkles, AlertCircle, Video, Users, Check, Loader2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { collection, query, orderBy, onSnapshot } from 'firebase/firestore';
+import { collection, query, orderBy, onSnapshot, doc, setDoc, getDocs } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import { useAuth } from '../contexts/AuthContext';
-import { GoogleGenAI } from '@google/genai';
+
 import { getPersonalizedContent } from '../utils/personalizationEngine';
 import { handleFirestoreError, OperationType } from '../utils/firestoreErrorHandler';
+import { API_BASE } from '../lib/apiConfig';
+import DOMPurify from 'dompurify';
 
-const UPCOMING_WEBINARS = [
+const MASTER_WEBINARS = [
   {
     id: 1,
     title: "Cracking JEE Advanced 2026: Master Strategy",
     speaker: "Aman Dhattarwal",
     date: "12 May 2026",
     time: "6:00 PM IST",
+    streamMatch: ["sciencePCM"],
     tags: ["Engineering", "JEE"],
     interestedCount: 1240,
     color: "bg-blue-500/10 text-blue-600 border-blue-500/20"
@@ -26,16 +29,51 @@ const UPCOMING_WEBINARS = [
     speaker: "Google Developer Expert",
     date: "15 May 2026",
     time: "5:00 PM IST",
+    streamMatch: ["sciencePCM", "sciencePCB", "commerce", "humanities", "vocational"],
     tags: ["Technology", "AI"],
     interestedCount: 856,
     color: "bg-purple-500/10 text-purple-600 border-purple-500/20"
   },
   {
     id: 3,
-    title: "Design Portfolio Masterclass",
-    speaker: "Product Designer @ Spotify",
+    title: "Cracking NEET 2026: Biology NCERT Deep Dive",
+    speaker: "Dr. Anand Mani",
+    date: "16 May 2026",
+    time: "4:00 PM IST",
+    streamMatch: ["sciencePCB"],
+    tags: ["Medical", "NEET"],
+    interestedCount: 1530,
+    color: "bg-green-500/10 text-green-600 border-green-500/20"
+  },
+  {
+    id: 4,
+    title: "IPMAT & BBA 2026: Direct IIM Entry Strategy",
+    speaker: "IIM Indore Alumnus",
     date: "18 May 2026",
+    time: "6:30 PM IST",
+    streamMatch: ["commerce", "humanities"],
+    tags: ["Management", "IIM"],
+    interestedCount: 920,
+    color: "bg-amber-500/10 text-amber-600 border-amber-500/20"
+  },
+  {
+    id: 5,
+    title: "CLAT & Law Careers: Top NLU Roadmap",
+    speaker: "NLU Delhi Gold Medalist",
+    date: "20 May 2026",
+    time: "5:00 PM IST",
+    streamMatch: ["humanities", "commerce"],
+    tags: ["Law", "CLAT"],
+    interestedCount: 710,
+    color: "bg-rose-500/10 text-rose-600 border-rose-500/20"
+  },
+  {
+    id: 6,
+    title: "Design Portfolio & NIFT Masterclass",
+    speaker: "Product Designer @ Spotify",
+    date: "22 May 2026",
     time: "7:00 PM IST",
+    streamMatch: ["vocational", "humanities", "commerce"],
     tags: ["Design", "Portfolio"],
     interestedCount: 541,
     color: "bg-pink-500/10 text-pink-600 border-pink-500/20"
@@ -48,6 +86,60 @@ export default function HomeScreen() {
   const [roadmaps, setRoadmaps] = useState<any[]>([]);
   const [insights, setInsights] = useState<string[]>([]);
   const [loadingInsights, setLoadingInsights] = useState(true);
+  const [registeredWebinars, setRegisteredWebinars] = useState<string[]>([]);
+  const [registeringId, setRegisteringId] = useState<number | null>(null);
+
+  // Fetch registered webinars for the user
+  useEffect(() => {
+    if (!user) return;
+    const fetchRegistrations = async () => {
+      try {
+        const webinarsRef = collection(db, 'users', user.uid, 'webinars');
+        const querySnapshot = await getDocs(webinarsRef);
+        const registeredIds = querySnapshot.docs.map(doc => doc.id);
+        setRegisteredWebinars(registeredIds);
+      } catch (err) {
+        console.error("Error fetching registered webinars:", err);
+      }
+    };
+    fetchRegistrations();
+  }, [user]);
+
+  // Dynamically select webinars based on user stream/ID
+  const upcomingWebinars = useMemo(() => {
+    const userStream = userProfile?.stream;
+    if (!userStream) return MASTER_WEBINARS;
+    
+    // Filter webinars matching user stream or general ones
+    const filtered = MASTER_WEBINARS.filter(w => w.streamMatch.includes(userStream));
+    return filtered.length > 0 ? filtered : MASTER_WEBINARS;
+  }, [userProfile?.stream]);
+
+  const handleRegisterWebinar = async (webinar: typeof MASTER_WEBINARS[0]) => {
+    if (!user) {
+      alert("Please sign in to register for webinars.");
+      return;
+    }
+
+    try {
+      setRegisteringId(webinar.id);
+      const webinarDocRef = doc(db, 'users', user.uid, 'webinars', String(webinar.id));
+      await setDoc(webinarDocRef, { 
+        registeredAt: new Date().toISOString(), 
+        webinarTitle: webinar.title, 
+        speaker: webinar.speaker,
+        date: webinar.date,
+        time: webinar.time
+      });
+      setRegisteredWebinars(prev => [...prev, String(webinar.id)]);
+      alert(`Successfully registered for "${webinar.title}"! We have added this to your schedule.`);
+    } catch (err) {
+      console.error("Error registering for webinar:", err);
+      alert("Failed to register. Please try again.");
+    } finally {
+      setRegisteringId(null);
+    }
+  };
 
   const personalized = useMemo(() => {
     if (!userProfile) return null;
@@ -68,7 +160,7 @@ export default function HomeScreen() {
           Each tip should be under 15 words and directly address their specific interests. Return them as a JSON array of strings.`;
         }
 
-        const response = await fetch('/api/generate-content', {
+        const response = await fetch(`${API_BASE}/api/generate-content`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ prompt: promptText })
@@ -158,8 +250,8 @@ export default function HomeScreen() {
             transition={{ delay: 0.5, duration: 0.5 }}
             className="flex gap-2"
           >
-            <Link to={userProfile?.stream ? `/careers/${userProfile.stream}` : '/explore'} className="inline-flex h-12 px-6 bg-dark text-light font-bold rounded-full items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-transform shadow-lg">
-              Explore My Path <ArrowRight size={18} />
+            <Link to="/my-story" className="inline-flex h-12 px-6 bg-dark text-light font-bold rounded-full items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-transform shadow-lg">
+              Discover My Paths <ArrowRight size={18} />
             </Link>
           </motion.div>
         </div>
@@ -233,34 +325,53 @@ export default function HomeScreen() {
       <section className="space-y-4">
         <div className="flex items-center justify-between">
           <h3 className="font-bold text-dark text-lg flex items-center gap-2">
-            <Video size={18} className="text-primary" /> Live Webinars
+            <Video size={18} className="text-primary" /> Live Webinars <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold">Personalized</span>
           </h3>
           <span className="text-xs text-primary font-bold hover:underline cursor-pointer">View All</span>
         </div>
         <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2 snap-x">
-          {UPCOMING_WEBINARS.map((webinar) => (
-            <div 
-              key={webinar.id} 
-              className={`min-w-[280px] md:min-w-[320px] snap-center rounded-3xl p-5 border shadow-sm ${webinar.color} flex flex-col justify-between`}
-            >
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <div className="text-xs font-black uppercase tracking-wider">{webinar.date}</div>
-                  <div className="flex items-center gap-1 text-xs font-bold bg-white/50 px-2 py-1 rounded-full px-2">
-                    <Users size={12} /> {webinar.interestedCount}
+          {upcomingWebinars.map((webinar) => {
+            const isRegistered = registeredWebinars.includes(String(webinar.id));
+            const isRegistering = registeringId === webinar.id;
+
+            return (
+              <div 
+                key={webinar.id} 
+                className={`min-w-[280px] md:min-w-[320px] snap-center rounded-3xl p-5 border shadow-sm ${webinar.color} flex flex-col justify-between`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-xs font-black uppercase tracking-wider">{webinar.date}</div>
+                    <div className="flex items-center gap-1 text-xs font-bold bg-white/50 px-2 py-1 rounded-full">
+                      <Users size={12} /> {webinar.interestedCount + (isRegistered ? 1 : 0)}
+                    </div>
                   </div>
+                  <h4 className="font-bold text-lg leading-tight mb-1">{webinar.title}</h4>
+                  <p className="text-sm opacity-80 font-medium mb-4">by {webinar.speaker}</p>
                 </div>
-                <h4 className="font-bold text-lg leading-tight mb-1">{webinar.title}</h4>
-                <p className="text-sm opacity-80 font-medium mb-4">by {webinar.speaker}</p>
+                <div className="flex items-center justify-between mt-auto pt-2">
+                  <span className="text-xs font-bold opacity-80">{webinar.time}</span>
+                  {isRegistered ? (
+                    <button 
+                      disabled 
+                      className="bg-green-600 text-white font-bold py-2 px-4 rounded-xl text-sm flex items-center gap-1 shadow-sm opacity-90 cursor-default"
+                    >
+                      <Check size={16} /> Registered
+                    </button>
+                  ) : (
+                    <button 
+                      onClick={() => handleRegisterWebinar(webinar)}
+                      disabled={isRegistering}
+                      className="bg-white/50 hover:bg-white text-current font-bold py-2 px-4 rounded-xl text-sm transition-colors shadow-sm flex items-center gap-1 cursor-pointer disabled:opacity-50"
+                    >
+                      {isRegistering ? <Loader2 size={16} className="animate-spin" /> : null}
+                      Register Now
+                    </button>
+                  )}
+                </div>
               </div>
-              <div className="flex items-center justify-between mt-auto pt-2">
-                <span className="text-xs font-bold opacity-80">{webinar.time}</span>
-                <button className="bg-white/50 hover:bg-white text-current font-bold py-2 px-4 rounded-xl text-sm transition-colors shadow-sm">
-                  Register Now
-                </button>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -284,7 +395,7 @@ export default function HomeScreen() {
             <div className="space-y-4">
               {insights.map((insight, idx) => (
                 <div key={idx} className="flex gap-3 items-start border-l-2 border-secondary/30 pl-4 py-1">
-                  <p className="text-sm font-medium leading-normal opacity-90">{insight}</p>
+                  <div className="text-sm font-medium leading-normal opacity-90" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(insight) }} />
                 </div>
               ))}
             </div>

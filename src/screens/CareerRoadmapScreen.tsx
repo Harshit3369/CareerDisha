@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, ArrowRight, Loader2, Plus, Trash2, CheckCircle, Download, BookOpen, Target, Award, Info, AlertTriangle, Lightbulb, Map, BookmarkPlus, BookmarkCheck } from 'lucide-react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { GoogleGenAI, Type } from '@google/genai';
+
 import { doc, setDoc, getDoc, serverTimestamp, collection } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import { cn } from '../lib/utils';
 import { useAuth } from '../contexts/AuthContext';
 import { handleFirestoreError, OperationType } from '../utils/firestoreErrorHandler';
+import { API_BASE } from '../lib/apiConfig';
 
 interface DegreeEntry {
   id: string;
@@ -173,7 +174,7 @@ You are an expert Indian Career Advisor. Generate a highly personalized career r
 Respond ONLY with valid JSON exactly matching this structure. Always provide detailed strings. Make it inspiring and completely relevant to Indian pathways, exams, and salaries (in INR/LPA).
       `.trim();
 
-      const response = await fetch('/api/generate-content', {
+      const response = await fetch(`${API_BASE}/api/generate-content`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -559,7 +560,7 @@ Respond ONLY with valid JSON exactly matching this structure. Always provide det
               <div className="bg-gradient-to-r from-[#1A1A2E] to-[#2A2A4E] text-[#FFFFFF] p-8 relative overflow-hidden print:bg-none print:text-dark">
                 <div className="absolute right-0 top-0 w-64 h-64 bg-primary/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 print:hidden" />
                 <div className="relative z-10">
-                    <p className="text-primary font-bold text-sm tracking-widest uppercase mb-2">Career Suggestor Intelligence</p>
+                    <p className="text-primary font-bold text-sm tracking-widest uppercase mb-2">CareerDisha+ Intelligence</p>
                   <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4 tracking-tight text-[#FFFFFF] print:text-dark">Your Personalized<br/>Career Roadmap</h1>
                   <p className="text-[#FFFFFF]/80 max-w-xl leading-relaxed print:text-dark/80">{roadmap.profileSummary}</p>
                 </div>
@@ -724,7 +725,7 @@ Respond ONLY with valid JSON exactly matching this structure. Always provide det
                 <div className="bg-gradient-to-r from-[#7C6FF7] to-[#F5A623] text-[#FFFFFF] p-8 rounded-3xl text-center shadow-lg relative overflow-hidden mt-8">
                   <div className="relative z-10">
                     <p className="text-2xl font-serif italic mb-4">"{roadmap.motivationalQuote}"</p>
-                    <p className="font-bold tracking-widest uppercase text-sm mb-8">We believe in you • Career Suggestor</p>
+                    <p className="font-bold tracking-widest uppercase text-sm mb-8">We believe in you • CareerDisha+</p>
                     
                     {!isSaved ? (
                       <button 
